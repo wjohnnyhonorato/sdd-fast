@@ -44,7 +44,7 @@ Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado.
 4. Peça ao agente para executar a tarefa, validar o resultado e revisar o diff.
 5. Após a aprovação humana, arquive a tarefa em `tasks/NNN-nome-curto.md`.
 
-O método completo e exemplos de validação estão em [sdd-fast.md](sdd-fast/sdd-fast.md).
+O método completo e exemplos de validação estão em [sdd-fast.md](sdd-fast/sdd-fast.md). A justificativa das escolhas e a comparação com o SDD do curso estão em [RATIONALE.md](sdd-fast/RATIONALE.md).
 
 ## Para cientistas de dados
 
@@ -64,4 +64,3 @@ Esses itens entram somente quando forem relevantes para a tarefa atual.
 - [AkitaOnRails — crítica a Harness, Loop e Spec-Driven Development](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
 - [DORA — Working in Small Batches](https://dora.dev/capabilities/working-in-small-batches/)
 - [Thoughtworks Technology Radar — Spec-Driven Development](https://www.thoughtworks.com/radar/techniques/spec-driven-development)
-
