@@ -1,41 +1,61 @@
 # AGENTS.md
 
-## Project contract
+## Contrato do projeto
 
-- Purpose: <problema que o projeto resolve>.
-- Primary user: <quem usa o resultado>.
-- Expected outcome: <resultado principal esperado>.
-- Invariants: <regras que nenhuma tarefa pode violar>.
-- Technical base: <tecnologias estruturais e estáveis>.
-- Never: <comportamentos permanentemente proibidos>.
+- Problema: <problema que o projeto resolve>.
+- Usuário principal: <quem usa o resultado>.
+- Resultado esperado: <resultado principal>.
+- Invariantes: <regras que nenhuma tarefa pode violar>.
+- Base técnica: <tecnologias estruturais e estáveis>.
+- Nunca fazer: <comportamentos permanentemente proibidos>.
 
-## Workflow
+## Antes de implementar
 
-- Leia `CURRENT_TASK.md` antes de modificar o projeto.
+- Leia `CURRENT_TASK.md`, o código e as validações relacionadas.
 - Se não houver tarefa definida, solicite uma ao humano.
+- Pergunte somente se uma ambiguidade puder mudar comportamento, arquitetura, risco ou escopo.
+- Se não houver ambiguidade material, prossiga sem criar plano ou documentação adicional.
+
+## Implementação
+
 - Faça somente **O que fazer** e respeite **O que não fazer**.
-- Trabalhe em mudanças pequenas e preserve o que estiver fora do escopo.
-- Se precisar ampliar a tarefa, pare e solicite aprovação.
-- O humano controla a tarefa e os testes; o agente atualiza o checkpoint.
+- Trabalhe em uma pequena mudança vertical e verificável.
+- Preserve código e comportamento fora do escopo.
+- Não adicione dependências, abstrações ou refatorações sem necessidade para a tarefa.
+- Se precisar ampliar o escopo ou enfraquecer a validação, pare e solicite aprovação.
 
-## Tests
+## Validação
 
-- Use a menor validação capaz de demonstrar o funcionamento.
-- Automatize comportamentos determinísticos, bugs e interfaces.
-- Para LLMs, teste critérios e fatos, não a redação exata.
-- Execute os testes relacionados e a suíte disponível antes de concluir.
-- Não declare como aprovado um teste que não foi executado.
+- Siga **Como validar** usando a menor evidência confiável para a mudança.
+- Teste comportamento observável por interfaces públicas, evitando detalhes internos.
+- Para ML, considere baseline, split, leakage e métricas quando aplicáveis.
+- Para causalidade, diferencie associação de efeito causal e valide os pressupostos aplicáveis.
+- Para agentes, teste contratos, caminhos, erros, parada e critérios de eval aplicáveis.
+- Não declare como executada ou aprovada uma validação que não ocorreu.
 
-## Completion
+## Revisão
 
-- Conclua somente quando a tarefa estiver atendida e os testes passarem.
-- Apresente o resultado ao humano e aguarde sua aprovação.
-- Mova a tarefa para `tasks/NNN-nome-curto.md`.
-- Use o próximo número sequencial e nunca reutilize números.
-- Redefina `CURRENT_TASK.md` como sem tarefa.
-- `tasks/` contém apenas tarefas concluídas; não crie backlog ou roadmap.
+Antes de concluir, compare o diff com `CURRENT_TASK.md` e verifique:
 
-## Commands
+- requisito ausente ou implementado incorretamente;
+- alteração fora do escopo;
+- complexidade, dependência ou abstração desnecessária;
+- evidência insuficiente para afirmar que funciona.
+
+Corrija o que estiver no escopo. Para os demais casos, informe ao humano.
+
+## Conclusão
+
+- Conclua somente quando a tarefa estiver atendida, validada e revisada.
+- Informe alterações, validações executadas, resultados e limitações.
+- Apresente o resultado ao humano e aguarde aprovação.
+- Após aprovação, mova a tarefa para `tasks/NNN-nome-curto.md`.
+- Use o próximo número sequencial, nunca reutilize números e redefina `CURRENT_TASK.md` como sem tarefa.
+- Arquivos em `tasks/` são histórico, não descrição atual do sistema.
+- Registre aqui somente regras permanentes; problemas recorrentes podem justificar uma regra, teste ou skill.
+
+## Comandos
 
 - Preparar projeto: `<comando do projeto>`
-- Executar testes: `<comando de testes>`
+- Executar validações: `<comando de validação>`
+

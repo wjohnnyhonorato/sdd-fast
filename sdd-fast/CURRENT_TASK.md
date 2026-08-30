@@ -1,4 +1,4 @@
-# Current task
+# Current task: nenhuma
 
 ## O que fazer
 
@@ -8,10 +8,11 @@ Nenhuma tarefa definida.
 
 Nenhum limite definido.
 
-## Testes de funcionamento
+## Como validar
 
-Nenhum teste definido.
+Nenhuma validação definida.
 
 ## Checkpoint
 
 Aguardando definição da tarefa.
+
