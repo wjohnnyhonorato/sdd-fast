@@ -4,6 +4,14 @@ SDD Fast é um método leve para desenvolver com coding agents sem vibe coding e
 
 > A tarefa preserva intenção e limites; o código implementa o comportamento; testes, métricas e evals demonstram o funcionamento.
 
+### Código compreensível por humanos
+
+O SDD Fast busca produzir a menor solução que atenda à tarefa e possa ser facilmente revisada. O código deve ter responsabilidades, entradas e saídas claras, preferindo funções coesas quando apropriado.
+
+Documentação deve explicar contratos, regras e decisões não evidentes, sem repetir mecanicamente o código. A comunicação do agente também deve ser curta e orientada ao que o humano precisa verificar ou decidir.
+
+Enxuto não significa condensado. Código curto, porém obscuro, não atende a esse princípio.
+
 ## Artefatos
 
 ```text

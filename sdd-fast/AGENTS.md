@@ -23,6 +23,24 @@
 - Preserve código e comportamento fora do escopo.
 - Não adicione dependências, abstrações ou refatorações sem necessidade para a tarefa.
 - Se precisar ampliar o escopo ou enfraquecer a validação, pare e solicite aprovação.
+- Escreva a solução mais simples que atenda à tarefa, sem código
+  especulativo ou abstrações para necessidades futuras.
+- Prefira funções pequenas e coesas quando elas representarem
+  naturalmente a solução.
+- Cada unidade deve ter responsabilidade, entradas e saídas claras.
+- Use nomes que expressem a intenção do código.
+- Documente contratos, regras de negócio e decisões não evidentes.
+- Não adicione comentários ou documentação que apenas repitam o código.
+- Divida a implementação quando ela não puder ser compreendida
+  e revisada com facilidade.
+
+## Comunicação
+
+- Seja direto e use textos claros e curtos.
+- Informe primeiro o resultado ou o bloqueio relevante.
+- Evite repetir contexto, código ou instruções já conhecidos.
+- Explique somente decisões, riscos e limitações que ajudem o humano a revisar ou decidir.
+- Não use textos longos para compensar ausência de evidência.
 
 ## Validação
 
