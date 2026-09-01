@@ -56,7 +56,7 @@
   quando aplicável, onde consultar o artefato gerado.
 - Um resumo do agente ou a afirmação de que a validação
   "passou" não constitui evidência suficiente.
-- Validações aprovadas tecnicamente não substituem a aprovação humana.
+- Validações bem-sucedidas não substituem a revisão e a aprovação humana.
 
 ## Revisão
 
