@@ -13,86 +13,48 @@
 
 - Leia `CURRENT_TASK.md`, o código e as validações relacionadas.
 - Se não houver tarefa definida, solicite uma ao humano.
-- Pergunte somente se uma ambiguidade puder mudar comportamento, arquitetura, risco ou escopo.
-- Se não houver ambiguidade material, prossiga sem criar plano ou documentação adicional.
-- Antes de editar, confirme que a tarefa possui um único comportamento
-  ou responsabilidade principal.
-- Se ela contiver entregas independentes ou produzir um diff difícil de revisar, pare e proponha tarefas menores.
+- Pergunte somente sobre ambiguidades que possam mudar comportamento,
+  arquitetura, risco ou escopo.
+- Confirme que a tarefa possui um único comportamento principal.
+  Se houver entregas independentes ou um diff difícil de revisar,
+  pare e proponha tarefas menores.
 
 ## Implementação
 
 - Faça somente **O que fazer** e respeite **O que não fazer**.
-- Trabalhe em uma pequena mudança vertical e verificável.
-- Preserve código e comportamento fora do escopo.
-- Não adicione dependências, abstrações ou refatorações sem necessidade para a tarefa.
-- Se precisar ampliar o escopo ou enfraquecer a validação, pare e solicite aprovação.
-- Escreva a solução mais simples que atenda à tarefa, sem código
-  especulativo ou abstrações para necessidades futuras.
-- Prefira funções pequenas e coesas quando elas representarem
-  naturalmente a solução.
-- Cada unidade deve ter responsabilidade, entradas e saídas claras.
-- Use nomes que expressem a intenção do código.
-- Documente contratos, regras de negócio e decisões não evidentes.
-- Não adicione comentários ou documentação que apenas repitam o código.
-- Divida a implementação quando ela não puder ser compreendida
-  e revisada com facilidade.
-- Passos internos podem orientar a execução, mas não devem criar
-  novas subtasks, documentos ou cerimônias.
-- Materialize a tarefa na menor superfície de código coerente;
-  não force toda mudança a caber em uma única função.
-
-## Comunicação
-
-- Seja direto e use textos claros e curtos.
-- Informe primeiro o resultado ou o bloqueio relevante.
-- Evite repetir contexto, código ou instruções já conhecidos.
-- Explique somente decisões, riscos e limitações que ajudem o humano a revisar ou decidir.
-- Não use textos longos para compensar ausência de evidência.
+- Implemente a menor solução coerente que atenda à tarefa.
+- Preserve comportamento e arquivos fora do escopo.
+- Não adicione dependências, refatorações, abstrações ou documentos
+  sem necessidade para a tarefa.
+- Prefira funções pequenas e coesas quando apropriado, com
+  responsabilidades, entradas e saídas claras.
+- Documente somente contratos, regras e decisões não evidentes.
+- Para ampliar o escopo ou enfraquecer a validação, solicite aprovação.
+- Passos internos podem orientar a execução, mas não devem virar
+  novas entregas, artefatos ou ciclos completos de validação.
+  - Se o trabalho crescer além do previsto ou deixar de convergir para um diff pequeno, pare em estado seguro, atualize o checkpoint e proponha a divisão da tarefa.
 
 ## Validação
 
 - Siga **Como validar** usando a menor evidência confiável para a mudança.
-- Teste comportamento observável por interfaces públicas, evitando detalhes internos.
-- Para ML, considere baseline, split, leakage e métricas quando aplicáveis.
-- Para causalidade, diferencie associação de efeito causal e valide os pressupostos aplicáveis.
-- Para agentes, teste contratos, caminhos, erros, parada e critérios de eval aplicáveis.
-- Não declare como executada ou aprovada uma validação que não ocorreu.
-- Toda validação deve gerar evidência que um humano consiga
-  inspecionar ou reproduzir.
-- Informe o procedimento executado, o resultado observável e,
-  quando aplicável, onde consultar o artefato gerado.
-- Um resumo do agente ou a afirmação de que a validação
-  "passou" não constitui evidência suficiente.
-- Validações bem-sucedidas não substituem a revisão e a aprovação humana.
-- Durante a implementação, execute primeiro somente os testes
-  diretamente afetados.
-- Evite testes redundantes e a repetição de suítes amplas após cada passo interno.
-- Execute validações mais amplas ao final somente quando o risco
-  de regressão justificar.
+- Durante a implementação, execute primeiro as validações diretamente
+  afetadas; amplie somente quando o risco de regressão justificar.
+- Apresente o procedimento, o resultado observável e o artefato
+  aplicável de forma que o humano possa inspecionar ou reproduzir.
+- Não declare como executada ou bem-sucedida uma validação que não ocorreu.
+- Validação bem-sucedida não substitui a aprovação humana.
 
-## Revisão
+## Revisão e conclusão
 
-Antes de concluir, compare o diff com `CURRENT_TASK.md` e verifique:
-
-- requisito ausente ou implementado incorretamente;
-- alteração fora do escopo;
-- complexidade, dependência ou abstração desnecessária;
-- evidência insuficiente para afirmar que funciona.
-
-Corrija o que estiver no escopo. Para os demais casos, informe ao humano.
-
-## Conclusão
-
-- Conclua somente quando a tarefa estiver atendida, validada e revisada.
-- Apresente as alterações, os procedimentos de validação, os resultados observáveis, os artefatos aplicáveis e as limitações.
-- Apresente as evidências ao humano e aguarde sua aprovação.
-- Após aprovação, mova a tarefa para `tasks/NNN-nome-curto.md`.
-- Use o próximo número sequencial, nunca reutilize números e redefina `CURRENT_TASK.md` como sem tarefa.
-- Arquivos em `tasks/` são histórico, não descrição atual do sistema.
-- Registre aqui somente regras permanentes; problemas recorrentes podem justificar uma regra, teste ou skill.
+- Compare o diff com a tarefa e verifique escopo, funcionamento,
+  complexidade desnecessária e suficiência das evidências.
+- Informe de forma curta: alterações, validações, resultados e limitações.
+- Aguarde aprovação antes de arquivar a tarefa.
+- Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
+  `CURRENT_TASK.md` como sem tarefa.
+- Tarefas arquivadas são histórico e não devem ser carregadas por padrão.
 
 ## Comandos
 
 - Preparar projeto: `<comando do projeto>`
 - Executar validações: `<comando de validação>`
-
