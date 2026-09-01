@@ -34,8 +34,10 @@ Código e validações descrevem o estado atual. Tarefas arquivadas são histór
 <limites que devem ser respeitados>
 
 ## Como validar
-- [ ] <evidência que demonstra o funcionamento>
-- [ ] `<comando, métrica ou verificação aplicável>`
+- [ ] <comportamento ou propriedade que deve ser demonstrada>
+- [ ] <evidência que o humano conseguirá inspecionar ou reproduzir>
+- [ ] `<comando, métrica, artefato ou procedimento aplicável>`
+
 
 ## Checkpoint
 <estado atual, próximo passo e eventual bloqueio>
@@ -55,6 +57,15 @@ O humano controla escopo e validação. O agente pode propor evidências e atual
 8. Após aprovação, a tarefa vai para `tasks/NNN-nome-curto.md` e `CURRENT_TASK.md` é limpo.
 
 ## Como validar
+
+
+Toda validação deve ser verificável por um humano. Isso significa apresentar o procedimento ou comando utilizado, o resultado observável e, quando aplicável, o artefato produzido.
+
+A afirmação do agente de que uma validação foi executada ou passou não é evidência suficiente. O agente produz e organiza as evidências; o humano as inspeciona e decide se a tarefa pode ser aprovada.
+
+Isso não significa criar relatórios extensos para todas as tarefas.
+Deve ser usada a menor evidência confiável que permita ao humano
+verificar a afirmação.
 
 Use a menor evidência confiável capaz de demonstrar o comportamento importante:
 

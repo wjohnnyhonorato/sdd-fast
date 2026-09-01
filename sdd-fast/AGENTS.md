@@ -32,6 +32,13 @@
 - Para causalidade, diferencie associação de efeito causal e valide os pressupostos aplicáveis.
 - Para agentes, teste contratos, caminhos, erros, parada e critérios de eval aplicáveis.
 - Não declare como executada ou aprovada uma validação que não ocorreu.
+- Toda validação deve gerar evidência que um humano consiga
+  inspecionar ou reproduzir.
+- Informe o procedimento executado, o resultado observável e,
+  quando aplicável, onde consultar o artefato gerado.
+- Um resumo do agente ou a afirmação de que a validação
+  "passou" não constitui evidência suficiente.
+- Validações aprovadas tecnicamente não substituem a aprovação humana.
 
 ## Revisão
 
@@ -47,8 +54,8 @@ Corrija o que estiver no escopo. Para os demais casos, informe ao humano.
 ## Conclusão
 
 - Conclua somente quando a tarefa estiver atendida, validada e revisada.
-- Informe alterações, validações executadas, resultados e limitações.
-- Apresente o resultado ao humano e aguarde aprovação.
+- Apresente as alterações, os procedimentos de validação, os resultados observáveis, os artefatos aplicáveis e as limitações.
+- Apresente as evidências ao humano e aguarde sua aprovação.
 - Após aprovação, mova a tarefa para `tasks/NNN-nome-curto.md`.
 - Use o próximo número sequencial, nunca reutilize números e redefina `CURRENT_TASK.md` como sem tarefa.
 - Arquivos em `tasks/` são histórico, não descrição atual do sistema.
