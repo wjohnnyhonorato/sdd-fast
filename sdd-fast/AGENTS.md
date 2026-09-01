@@ -15,6 +15,9 @@
 - Se não houver tarefa definida, solicite uma ao humano.
 - Pergunte somente se uma ambiguidade puder mudar comportamento, arquitetura, risco ou escopo.
 - Se não houver ambiguidade material, prossiga sem criar plano ou documentação adicional.
+- Antes de editar, confirme que a tarefa possui um único comportamento
+  ou responsabilidade principal.
+- Se ela contiver entregas independentes ou produzir um diff difícil de revisar, pare e proponha tarefas menores.
 
 ## Implementação
 
@@ -33,6 +36,10 @@
 - Não adicione comentários ou documentação que apenas repitam o código.
 - Divida a implementação quando ela não puder ser compreendida
   e revisada com facilidade.
+- Passos internos podem orientar a execução, mas não devem criar
+  novas subtasks, documentos ou cerimônias.
+- Materialize a tarefa na menor superfície de código coerente;
+  não force toda mudança a caber em uma única função.
 
 ## Comunicação
 
@@ -57,6 +64,11 @@
 - Um resumo do agente ou a afirmação de que a validação
   "passou" não constitui evidência suficiente.
 - Validações bem-sucedidas não substituem a revisão e a aprovação humana.
+- Durante a implementação, execute primeiro somente os testes
+  diretamente afetados.
+- Evite testes redundantes e a repetição de suítes amplas após cada passo interno.
+- Execute validações mais amplas ao final somente quando o risco
+  de regressão justificar.
 
 ## Revisão
 

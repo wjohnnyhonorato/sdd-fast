@@ -146,3 +146,12 @@ Depois da aprovação, basta pedir:
 ```text
 Execute CURRENT_TASK.md, valide o resultado e revise o diff antes de concluir.
 ```
+
+## Sessões de trabalho
+
+Preferencialmente, inicie uma nova sessão do coding agent para cada
+tarefa. O agente deve reconstruir o contexto a partir de `AGENTS.md`,
+`CURRENT_TASK.md`, código e testes relacionados, sem depender da
+conversa anterior.
+
+Tarefas arquivadas não devem ser carregadas por padrão.
