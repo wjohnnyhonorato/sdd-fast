@@ -10,7 +10,8 @@ Foi pensado para projetos de software, Data Science, Machine Learning, inferênc
 
 - Uma única tarefa ativa, pequena e verificável.
 - Perguntas somente quando a resposta puder mudar comportamento, arquitetura, risco ou escopo.
-- A menor validação confiável para o tipo de entrega.
+- A menor validação confiável que um humano consiga inspecionar
+  ou reproduzir.
 - Revisão do diff antes da aprovação humana.
 - Regras e skills surgem de problemas recorrentes, não de antecipação.
 - Código e evidências descrevem o estado atual; tarefas arquivadas preservam apenas o histórico.
