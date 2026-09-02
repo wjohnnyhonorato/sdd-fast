@@ -2,9 +2,9 @@
 
 ## Contrato do projeto
 
-- Problema: <problema que o projeto resolve>.
+- Escopo do projeto: <escopo que o projeto deve resolver>.
 - Usuário principal: <quem usa o resultado>.
-- Resultado esperado: <resultado principal>.
+- Entrega esperada: <resultado principal>.
 - Invariantes: <regras que nenhuma tarefa pode violar>.
 - Base técnica: <tecnologias estruturais e estáveis>.
 - Nunca fazer: <comportamentos permanentemente proibidos>.
