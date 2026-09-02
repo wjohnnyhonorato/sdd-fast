@@ -2,7 +2,7 @@
 
 ## Contrato do projeto
 
-- Escopo do projeto: <escopo que o projeto deve resolver>.
+- Objetivo e escopo: <problema que resolve e limites do projeto>.
 - Usuário principal: <quem usa o resultado>.
 - Entrega esperada: <resultado principal>.
 - Invariantes: <regras que nenhuma tarefa pode violar>.
@@ -19,14 +19,13 @@
 
 ## Implementação
 
-- Faça somente **O que fazer** do`CURRENT_TASK.md`e respeite **O que não fazer** do `CURRENT_TASK.md`.
+- Faça somente **O que fazer** do `CURRENT_TASK.md` e respeite **O que não fazer** do `CURRENT_TASK.md`.
 - Implemente a menor solução coerente que atenda à tarefa.
 - Preserve comportamento e arquivos fora do escopo.
 - Não adicione dependências, refatorações, abstrações ou documentos sem necessidade para a tarefa.
 - Prefira funções pequenas e coesas quando apropriado, com
   responsabilidades, entradas e saídas claras.
 - Documente funções com descrição do que faz, entradas e saidas, em linguagem simples.
-- Documente somente contratos, regras e decisões não evidentes.
 - Para ampliar o escopo ou enfraquecer a validação, solicite aprovação.
 - Passos internos podem orientar a execução, mas não devem virar novas entregas, artefatos ou ciclos completos de validação.
 - Antes de pausar, solicitar aprovação ou encerrar sem concluir, atualize **Checkpoint** do `CURRENT_TASK.md` com estado atual, próximo passo e eventual bloqueio, sem registrar um diário de comandos.
