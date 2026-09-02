@@ -32,7 +32,12 @@
 - Para ampliar o escopo ou enfraquecer a validação, solicite aprovação.
 - Passos internos podem orientar a execução, mas não devem virar
   novas entregas, artefatos ou ciclos completos de validação.
-- Se o trabalho crescer além do previsto ou deixar de convergir para um diff pequeno, pare em estado seguro, atualize o checkpoint e proponha a divisão da tarefa.
+- Se o trabalho crescer além do previsto ou deixar de convergir para
+  um diff pequeno, pare em estado seguro, atualize o checkpoint e
+  proponha a divisão da tarefa.
+- Antes de pausar, solicitar aprovação ou encerrar sem concluir,
+  atualize **Checkpoint** com estado atual, próximo passo e eventual
+  bloqueio, sem registrar um diário de comandos.
 
 ## Validação
 
@@ -43,6 +48,11 @@
   aplicável de forma que o humano possa inspecionar ou reproduzir.
 - Não declare como executada ou bem-sucedida uma validação que não ocorreu.
 - Validação bem-sucedida não substitui a aprovação humana.
+- Use evidência adequada à entrega: testes para comportamento
+  determinístico; métricas, diagnósticos causais ou evals quando
+  aplicáveis.
+- Em projetos sem cobertura, proteja somente o comportamento alterado;
+  não crie uma suíte retroativa sem solicitação.
 
 ## Revisão e conclusão
 
