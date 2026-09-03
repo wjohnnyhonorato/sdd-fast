@@ -9,8 +9,10 @@ Foi pensado para projetos de software, Data Science, Machine Learning, inferênc
 ## Princípios
 
 - Uma única tarefa ativa, pequena e verificável.
-- Código simples e compreensível, com responsabilidades, entradas e saídas claras.
-- Documentação somente para contratos, regras e decisões não evidentes.
+- Código organizado em módulos e funções enxutos, coesos e com
+  responsabilidades, entradas e saídas claras.
+- Cada função possui documentação curta sobre objetivo, entradas,
+  saída e regras relevantes.
 - Perguntas somente quando a resposta puder mudar comportamento, arquitetura, risco ou escopo.
 - A menor validação confiável que um humano consiga inspecionar
   ou reproduzir.

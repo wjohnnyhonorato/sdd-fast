@@ -6,11 +6,17 @@ SDD Fast é um método leve para desenvolver com coding agents sem vibe coding e
 
 ## Código compreensível por humanos
 
-O SDD Fast busca produzir a menor solução que atenda à tarefa e possa ser facilmente revisada. O código deve ter responsabilidades, entradas e saídas claras, preferindo funções coesas quando apropriado.
+O SDD Fast busca produzir a menor solução que atenda à tarefa e possa ser facilmente revisada.
 
-Documentação deve explicar contratos, regras e decisões não evidentes, sem repetir mecanicamente o código. A comunicação do agente também deve ser curta e orientada ao que o humano precisa verificar ou decidir.
+Em projetos Python, o código reutilizável deve ficar em `src/<pacote>`, organizado em módulos temáticos por responsabilidade.
+O ponto de entrada, como `main.py`, deve permanecer pequeno e sem lógica do domínio.
 
-Enxuto não significa condensado. Código curto, porém obscuro, não atende a esse princípio.
+Módulos e funções devem ser enxutos, coesos e possuir uma responsabilidade clara. Entradas e saídas devem estar explícitas, preferencialmente por meio de tipagem.
+
+Cada função deve possuir documentação curta sobre seu objetivo,
+entradas, saída e regras relevantes, sem narrar mecanicamente a implementação.
+
+Enxuto não significa condensado. Código curto, porém obscuro, não atende a esse princípio. A divisão também não deve criar módulos, funções ou abstrações artificiais.
 
 ## Artefatos
 

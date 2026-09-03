@@ -7,6 +7,10 @@
 - Entrega esperada: <resultado principal>.
 - Invariantes: <regras que nenhuma tarefa pode violar>.
 - Base técnica: <tecnologias estruturais e estáveis>.
+- Arquitetura: código reutilizável em `src/<pacote>`, organizado
+  em módulos por responsabilidade; pontos de entrada permanecem
+  pequenos e sem lógica do domínio.
+- Ponto de entrada: <arquivo.py na raiz, main.py, api.py, app.py ou outro mais aplicável> 
 - Nunca fazer: <comportamentos permanentemente proibidos>.
 
 ## Antes de implementar
@@ -23,14 +27,13 @@
 - Implemente a menor solução coerente que atenda à tarefa.
 - Preserve comportamento e arquivos fora do escopo.
 - Não adicione dependências, refatorações, abstrações ou documentos sem necessidade para a tarefa.
-- Prefira funções pequenas e coesas quando apropriado, com
-  responsabilidades, entradas e saídas claras.
+- Prefira módulos e funções pequenos e coesos, cada um com responsabilidade, entradas e saídas claras.
 - Documente funções com descrição do que faz, entradas e saidas, em linguagem simples.
+- Mantenha entradas e saídas explícitas, preferencialmente com tipagem.
 - Para ampliar o escopo ou enfraquecer a validação, solicite aprovação.
 - Passos internos podem orientar a execução, mas não devem virar novas entregas, artefatos ou ciclos completos de validação.
 - Antes de pausar, solicitar aprovação ou encerrar sem concluir, atualize **Checkpoint** do `CURRENT_TASK.md` com estado atual, próximo passo e eventual bloqueio, sem registrar um diário de comandos.
 - Se o trabalho crescer além do previsto ou deixar de convergir para um diff pequeno, pare em estado seguro, atualize o checkpoint e proponha a divisão da tarefa.
-
 
 ## Validação
 
