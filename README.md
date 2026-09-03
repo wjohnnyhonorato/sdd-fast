@@ -49,7 +49,7 @@ Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado.
 4. Peça ao agente para executar a tarefa, validar o resultado e revisar o diff.
 5. Após a aprovação humana, arquive a tarefa em `tasks/NNN-nome-curto.md`.
 
-O método completo e exemplos de validação estão em [sdd-fast.md](sdd-fast/sdd-fast.md). A justificativa das escolhas e a comparação com o SDD do curso estão em [RATIONALE.md](sdd-fast/RATIONALE.md).
+O método completo e exemplos de validação estão em [sdd-fast-how-to-use.md](sdd-fast/sdd-fast-how-to-use.md). A justificativa das escolhas e a comparação com o SDD do curso estão em [RATIONALE.md](sdd-fast/RATIONALE.md).
 
 ## Para cientistas de dados
 
