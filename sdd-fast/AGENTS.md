@@ -7,11 +7,11 @@
 - Entrega esperada: <resultado principal>.
 - Invariantes: <regras que nenhuma tarefa pode violar>.
 - Base técnica: <tecnologias estruturais e estáveis>.
-- Arquitetura: código reutilizável em `src/<pacote>`, organizado
-  em módulos por responsabilidade; pontos de entrada permanecem
-  pequenos e sem lógica do domínio.
-- Ponto de entrada: <arquivo.py na raiz, main.py, api.py, app.py ou outro mais aplicável> 
+- Arquitetura: <estrutura estável do projeto; em Python, prefira
+  código reutilizável em `src/<pacote>` e módulos organizados por responsabilidade>.
+- Ponto de entrada: <arquivo ou comando principal, quando aplicável>; deve permanecer pequeno e sem lógica do domínio.
 - Nunca fazer: <comportamentos permanentemente proibidos>.
+
 
 ## Antes de implementar
 
@@ -28,7 +28,7 @@
 - Preserve comportamento e arquivos fora do escopo.
 - Não adicione dependências, refatorações, abstrações ou documentos sem necessidade para a tarefa.
 - Prefira módulos e funções pequenos e coesos, cada um com responsabilidade, entradas e saídas claras.
-- Documente funções com descrição do que faz, entradas e saidas, em linguagem simples.
+- Documente cada função de forma curta, explicando objetivo, entradas, saída e regras relevantes, sem narrar a implementação.
 - Mantenha entradas e saídas explícitas, preferencialmente com tipagem.
 - Para ampliar o escopo ou enfraquecer a validação, solicite aprovação.
 - Passos internos podem orientar a execução, mas não devem virar novas entregas, artefatos ou ciclos completos de validação.
@@ -49,8 +49,8 @@
 
 - Compare o diff com a tarefa e verifique escopo, funcionamento, complexidade desnecessária e suficiência das evidências.
 - Não reproduza o diff nem arquivos completos no chat.
-- Informe de forma curta: alterações, validações, resultados e limitações, listando modulos e funções alterados.
-- O humano revisa as alterações detalhadas pelo pelo editor.
+- Informe de forma curta: alterações, validações, resultados e  limitações, listando módulos e funções alterados.
+- O humano revisa as alterações detalhadas no editor.
 - Aguarde aprovação antes de arquivar a tarefa.
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
   `CURRENT_TASK.md` como sem tarefa.
