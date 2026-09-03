@@ -1,4 +1,4 @@
-# SDD Fast
+# SDD Fast — Como usar
 
 SDD Fast é um método leve para desenvolver com coding agents sem vibe coding e sem depender apenas do histórico do chat. Ele preserva somente o contrato permanente do projeto, a tarefa atual e o histórico das entregas.
 
