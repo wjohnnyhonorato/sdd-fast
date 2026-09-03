@@ -46,7 +46,7 @@
 
 - Compare o diff com a tarefa e verifique escopo, funcionamento, complexidade desnecessária e suficiência das evidências.
 - Não reproduza o diff nem arquivos completos no chat.
-- Informe de forma curta: alterações, validações, resultados e limitações.
+- Informe de forma curta: alterações, validações, resultados e limitações, listando modulos e funções alterados.
 - O humano revisa as alterações detalhadas pelo pelo editor.
 - Aguarde aprovação antes de arquivar a tarefa.
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
