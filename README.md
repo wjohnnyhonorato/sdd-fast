@@ -35,7 +35,7 @@ tasks/
 |---|---|
 | `AGENTS.md` | Contrato do projeto e regras permanentes para agentes |
 | `CURRENT_TASK.md` | Única mudança em andamento, seus limites e como validá-la |
-| `FUTURE_TASKS.md` | Memória humana de possíveis trabalhos futuros; não autoriza implementação |
+| `FUTURE_TASKS.md` | Memória humana opcional de possíveis trabalhos futuros; não autoriza implementação |
 | `tasks/` | Histórico sequencial das tarefas concluídas |
 | Código | Comportamento atual do sistema |
 | Testes, métricas e evals | Evidências de funcionamento |
@@ -47,10 +47,10 @@ Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado.
 
 1. Copie [AGENTS.md](sdd-fast/AGENTS.md) e [CURRENT_TASK.md](sdd-fast/CURRENT_TASK.md) para a raiz do projeto.
 2. Se precisar preservar ideias futuras, copie também [FUTURE_TASKS.md](sdd-fast/FUTURE_TASKS.md).
-2. Preencha o contrato e os comandos reais em `AGENTS.md`.
-3. Defina a primeira tarefa em `CURRENT_TASK.md`.
-4. Peça ao agente para executar a tarefa, validar o resultado e revisar o diff.
-5. Após a aprovação humana, arquive a tarefa em `tasks/NNN-nome-curto.md`.
+3. Preencha o contrato e os comandos reais em `AGENTS.md`.
+4. Defina a primeira tarefa em `CURRENT_TASK.md`.
+5. Peça ao agente para executar a tarefa, validar o resultado e revisar o diff.
+6. Após a aprovação humana, arquive a tarefa em `tasks/NNN-nome-curto.md`.
 
 O método completo e exemplos de validação estão em [sdd-fast-how-to-use.md](sdd-fast/sdd-fast-how-to-use.md). A justificativa das escolhas e a comparação com o SDD do curso estão em [RATIONALE.md](sdd-fast/RATIONALE.md).
 
