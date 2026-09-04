@@ -65,6 +65,7 @@ O curso se aproxima de **spec as source of truth**: a especificação orienta e 
 |---|---|
 | `AGENTS.md` | Contrato permanente e pequeno do projeto |
 | `CURRENT_TASK.md` | Âncora temporária da intenção, dos limites e da validação |
+| `FUTURE_TASKS.md` | Memória humana de possibilidades, sem representar escopo aprovado |
 | Código | Comportamento executável atual |
 | Testes, métricas e evals | Evidência do comportamento e da qualidade |
 | `tasks/` | Histórico da intenção no momento da entrega, sem obrigação de sincronização futura |
@@ -90,7 +91,7 @@ Legenda:
 | Criar uma constituição do projeto | Simplificada | Um contrato curto dentro de `AGENTS.md` | Evita três documentos permanentes e mantém junto o que o agente precisa ler |
 | Manter `mission.md` | Substituída | Objetivo e limites duráveis entram no contrato do projeto ou README | Um arquivo separado só agrega valor quando a missão exige discussão própria |
 | Manter `tech-stack.md` | Substituída | Restrições tecnológicas duráveis entram em `AGENTS.md`; detalhes ficam no projeto | Versões, dependências e comandos devem ser inferidos de arquivos executáveis sempre que possível |
-| Manter `roadmap.md` | Retirada do núcleo | Roadmap pode existir na ferramenta de produto ou gestão adotada pelo time | Prioridades mudam, nem toda tarefa futura precisa entrar no contexto do coding agent e o método não deve competir com a gestão do produto |
+| Manter `roadmap.md` | Retirada do núcleo | O roadmap pode permanecer na ferramenta de gestão; `FUTURE_TASKS.md` guarda apenas lembretes curtos | Distingue memória de possíveis trabalhos de planejamento e priorização do produto |
 | Tratar a constituição como documento vivo | Mantida | `AGENTS.md` muda quando o contrato permanente realmente muda | Regras estáveis precisam evoluir, mas não a cada tarefa |
 | Transformar um item do roadmap em feature | Substituída | O humano escolhe a próxima mudança de valor e cria `CURRENT_TASK.md` | Desacopla desenvolvimento do formato de planejamento usado pela organização |
 | Criar branch por feature | Opcional | Segue a política Git do time | Branch é estratégia de integração, não requisito para alinhar um agente |

@@ -25,6 +25,7 @@ Foi pensado para projetos de software, Data Science, Machine Learning, inferênc
 ```text
 AGENTS.md
 CURRENT_TASK.md
+FUTURE_TASKS.md
 tasks/
 ├── 001-primeira-entrega.md
 └── 002-segunda-entrega.md
@@ -34,16 +35,18 @@ tasks/
 |---|---|
 | `AGENTS.md` | Contrato do projeto e regras permanentes para agentes |
 | `CURRENT_TASK.md` | Única mudança em andamento, seus limites e como validá-la |
+| `FUTURE_TASKS.md` | Memória humana de possíveis trabalhos futuros; não autoriza implementação |
 | `tasks/` | Histórico sequencial das tarefas concluídas |
 | Código | Comportamento atual do sistema |
 | Testes, métricas e evals | Evidências de funcionamento |
 | Git | Histórico técnico das modificações |
 
-Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado.
+Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado. `FUTURE_TASKS.md` preserva somente lembretes curtos do humano.
 
 ## Como começar
 
 1. Copie [AGENTS.md](sdd-fast/AGENTS.md) e [CURRENT_TASK.md](sdd-fast/CURRENT_TASK.md) para a raiz do projeto.
+2. Se precisar preservar ideias futuras, copie também [FUTURE_TASKS.md](sdd-fast/FUTURE_TASKS.md).
 2. Preencha o contrato e os comandos reais em `AGENTS.md`.
 3. Defina a primeira tarefa em `CURRENT_TASK.md`.
 4. Peça ao agente para executar a tarefa, validar o resultado e revisar o diff.

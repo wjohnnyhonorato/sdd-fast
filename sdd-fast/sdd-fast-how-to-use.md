@@ -23,6 +23,7 @@ Enxuto não significa condensado. Código curto, porém obscuro, não atende a e
 ```text
 AGENTS.md
 CURRENT_TASK.md
+FUTURE_TASKS.md
 tasks/
 ├── 001-primeira-entrega.md
 └── 002-segunda-entrega.md
@@ -30,6 +31,7 @@ tasks/
 
 - `AGENTS.md`: contrato do projeto e regras permanentes.
 - `CURRENT_TASK.md`: única tarefa em andamento.
+- `FUTURE_TASKS.md`: memória humana opcional de trabalhos que ainda não foram selecionados ou aprovados.
 - `tasks/`: histórico sequencial das tarefas concluídas.
 
 Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado.
@@ -71,7 +73,6 @@ O humano controla escopo e validação. O agente pode propor evidências e atual
 8. Após aprovação, a tarefa vai para `tasks/NNN-nome-curto.md` e `CURRENT_TASK.md` é limpo.
 
 ## Como validar
-
 
 Toda validação deve ser verificável por um humano. Isso significa apresentar o procedimento ou comando utilizado, o resultado observável e, quando aplicável, o artefato produzido.
 
@@ -128,11 +129,12 @@ Se não couber, divida em entregas verticais sequenciais. Não crie um `plan.md`
 | Problema recorrente | Regra, teste ou futura skill |
 | Entrega concluída | `tasks/NNN-nome-curto.md` |
 | Comando ou conversa sem valor futuro | Não preservar |
+| Possível trabalho futuro | `FUTURE_TASKS.md`, em uma frase curta |
 
 ## Regras de simplicidade
 
 - Apenas uma tarefa ativa, preferencialmente entre 8 e 15 linhas.
-- Nenhuma tarefa futura registrada.
+- Trabalhos futuros podem ser registrados em `FUTURE_TASKS.md`, sem especificação, prioridade obrigatória ou autorização de execução.
 - Perguntas apenas sobre ambiguidades materiais.
 - Checkpoint registra estado, próximo passo e bloqueios; não é diário de comandos.
 - Não duplicar detalhes existentes no código, testes ou README.

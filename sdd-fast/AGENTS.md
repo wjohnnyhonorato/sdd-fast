@@ -20,6 +20,7 @@
 - Pergunte somente sobre ambiguidades que possam mudar comportamento, arquitetura, risco ou escopo.
 - Confirme que a tarefa possui um único comportamento principal.
 - Se houver entregas independentes ou um diff difícil de revisar, pare e proponha tarefas menores.
+- `FUTURE_TASKS.md` é memória do humano, não escopo aprovado.  Não o leia, detalhe ou execute sem solicitação.
 
 ## Implementação
 
@@ -55,6 +56,7 @@
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
   `CURRENT_TASK.md` como sem tarefa.
 - Tarefas arquivadas são histórico e não devem ser carregadas por padrão.
+- Sugira próximos trabalhos somente quando forem consequência relevante da entrega registre-os em `FUTURE_TASKS.md`apenas com aprovação humana.
 
 ## Comandos
 
