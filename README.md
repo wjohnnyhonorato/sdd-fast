@@ -9,6 +9,8 @@ Foi pensado para projetos de software, Data Science, Machine Learning, inferênc
 ## Princípios
 
 - Uma única tarefa ativa, pequena e verificável.
+- Contexto reconstruído progressivamente para cada tarefa, conforme
+  o alcance e o risco da mudança.
 - Código organizado em módulos e funções enxutos, coesos e com
   responsabilidades, entradas e saídas claras.
 - Cada função possui documentação curta sobre objetivo, entradas,
@@ -49,8 +51,13 @@ Não existem roadmap obrigatório, backlog de specs ou plano técnico detalhado.
 2. Se precisar preservar ideias futuras, copie também [FUTURE_TASKS.md](sdd-fast/FUTURE_TASKS.md).
 3. Preencha o contrato e os comandos reais em `AGENTS.md`.
 4. Defina a primeira tarefa em `CURRENT_TASK.md`.
-5. Peça ao agente para executar a tarefa, validar o resultado e revisar o diff.
+5. Preferencialmente em uma nova sessão, peça ao agente para executar
+   a tarefa, validar o resultado e revisar o diff.
 6. Após a aprovação humana, arquive a tarefa em `tasks/NNN-nome-curto.md`.
+
+Uma nova sessão limpa o histórico transitório do chat, mas não dispensa
+a compreensão do projeto. O agente deve examinar progressivamente o
+código e as validações relacionadas à tarefa.
 
 O método completo e exemplos de validação estão em [sdd-fast-how-to-use.md](sdd-fast/sdd-fast-how-to-use.md). A justificativa das escolhas e a comparação com o SDD do curso estão em [RATIONALE.md](sdd-fast/RATIONALE.md).
 

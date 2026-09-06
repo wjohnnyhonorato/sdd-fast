@@ -63,13 +63,13 @@
 
 - Compare o diff com a tarefa e verifique escopo, funcionamento, complexidade desnecessária e suficiência das evidências.
 - Não reproduza o diff nem arquivos completos no chat.
-- Informe de forma curta: alterações, validações, resultados e  limitações, listando módulos e funções alterados.
+- Informe de forma curta: alterações, validações, resultados e limitações, listando módulos e funções alterados.
 - O humano revisa as alterações detalhadas no editor.
 - Aguarde aprovação antes de arquivar a tarefa.
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
   `CURRENT_TASK.md` como sem tarefa.
 - Tarefas arquivadas são histórico e não devem ser carregadas por padrão.
-- Sugira próximos trabalhos somente quando forem consequência relevante da entrega registre-os em `FUTURE_TASKS.md`apenas com aprovação humana.
+- Sugira próximos trabalhos somente quando forem consequência relevante da entrega. Registre-os em `FUTURE_TASKS.md` apenas com aprovação humana.
 
 ## Comandos
 

@@ -114,11 +114,11 @@ Legenda:
 | Sincronizar specs e código | Redefinida | Apenas a tarefa ativa precisa refletir o trabalho atual | Arquivos arquivados são registro histórico, não documentação operacional |
 | Versionar specs e código juntos | Mantida | Todos os artefatos úteis permanecem no Git | Permite revisar a intenção junto do diff que a implementou |
 | Fazer commits pequenos | Mantida como prática | Commits acompanham mudanças coerentes e revisáveis | Melhora revisão e recuperação, sem exigir um commit por item burocrático |
-| Preservar contexto entre sessões | Mantida | Contrato, tarefa e checkpoint curtos | Continuidade é necessária, mas histórico integral de conversa não é contexto de alta qualidade |
+| Preservar contexto entre sessões | Redefinida | Cada tarefa começa preferencialmente em uma nova sessão, que reconstrói o contexto a partir do contrato, da tarefa, do checkpoint e do projeto | Evita carregar conversas antigas sem perder o contexto técnico persistido |
 | Usar checkpoint para continuidade | Simplificada | Estado atual, próximo passo e bloqueio | Não deve virar diário de comandos ou duplicação do Git |
 | Manter o humano como arquiteto e responsável final | Mantida | Humano aprova escopo e resultado | O agente amplia execução, mas não assume responsabilidade técnica ou de negócio |
 | Autorizar comandos e ações do agente com cuidado | Mantida | Regras de segurança ficam no harness e no contrato do projeto | Autonomia deve respeitar risco, credenciais e reversibilidade |
-| Fazer reengenharia de contexto em projetos legados | Mantida | Agente examina código, testes e docs antes de definir a tarefa | Em brownfield, o comportamento existente é parte essencial do contrato |
+| Fazer reengenharia de contexto em projetos legados | Mantida | O agente examina progressivamente estrutura, configurações, pontos de entrada, código e validações relacionados | Em brownfield, é necessário compreender o comportamento existente sem carregar preventivamente todo o repositório |
 | Executar grandes partes do roadmap quando o contexto amadurecer | Não recomendada como padrão | Só ocorre se ainda formar uma tarefa pequena e verificável | Velocidade de geração não elimina risco de um diff grande e difícil de revisar |
 | Automatizar o workflow com skills | Opcional | Uma prática recorrente e comprovada pode virar skill | Evita criar conhecimento e manutenção antes de existir demanda real |
 | Criar skills locais ou globais | Mantida como possibilidade | Skill de projeto para domínio local; skill global para prática reutilizável | Mantém portabilidade sem carregar conhecimento irrelevante em todas as tarefas |

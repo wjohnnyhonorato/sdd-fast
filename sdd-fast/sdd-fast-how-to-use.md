@@ -1,6 +1,9 @@
 # SDD Fast — Como usar
 
-SDD Fast é um método leve para desenvolver com coding agents sem vibe coding e sem depender apenas do histórico do chat. Ele preserva somente o contrato permanente do projeto, a tarefa atual e o histórico das entregas.
+SDD Fast é um método leve para desenvolver com coding agents sem
+vibe coding e sem depender apenas do histórico do chat. Ele preserva
+o contrato permanente do projeto, a tarefa atual, possíveis trabalhos
+futuros e o histórico das entregas.
 
 > A tarefa preserva intenção e limites; o código implementa o comportamento; testes, métricas e evals demonstram o funcionamento.
 
@@ -54,7 +57,6 @@ Código e validações descrevem o estado atual. Tarefas arquivadas são histór
 - [ ] <evidência que o humano conseguirá inspecionar ou reproduzir>
 - [ ] `<comando, métrica, artefato ou procedimento aplicável>`
 
-
 ## Checkpoint
 <estado atual, próximo passo e eventual bloqueio>
 ```
@@ -64,7 +66,8 @@ O humano controla escopo e validação. O agente pode propor evidências e atual
 ## Fluxo
 
 1. Humano e agente definem uma tarefa pequena e observável.
-2. O agente lê `AGENTS.md`, `CURRENT_TASK.md`, o código e as validações relacionadas.
+2. O agente lê `AGENTS.md`, `CURRENT_TASK.md` e reconstrói
+   progressivamente o contexto necessário a partir do projeto.
 3. Faz perguntas somente sobre ambiguidades que alterem comportamento, arquitetura, risco ou escopo.
 4. Implementa uma pequena mudança vertical e verificável.
 5. Executa a validação definida e atualiza o checkpoint.
@@ -143,10 +146,10 @@ Se não couber, divida em entregas verticais sequenciais. Não crie um `plan.md`
 ## Prompt inicial
 
 ```text
-Leia AGENTS.md e examine o projeto. Ajude-me a definir CURRENT_TASK.md
-com somente: o que fazer, o que não fazer, como validar e checkpoint.
-Pergunte apenas sobre ambiguidades que possam mudar a solução.
-Não implemente antes da minha aprovação.
+Leia AGENTS.md e examine progressivamente o projeto. Ajude-me a definir
+CURRENT_TASK.md com somente: o que fazer, o que não fazer, como validar
+e checkpoint. Pergunte apenas sobre ambiguidades que possam mudar a
+solução. Não implemente antes da minha aprovação.
 ```
 
 Depois da aprovação, basta pedir:
@@ -157,9 +160,21 @@ Execute CURRENT_TASK.md, valide o resultado e revise o diff antes de concluir.
 
 ## Sessões de trabalho
 
-Preferencialmente, inicie uma nova sessão do coding agent para cada
-tarefa. O agente deve reconstruir o contexto a partir de `AGENTS.md`,
-`CURRENT_TASK.md`, código e testes relacionados, sem depender da
-conversa anterior.
+Preferencialmente, cada tarefa deve começar em uma nova sessão do
+coding agent.
 
-Tarefas arquivadas não devem ser carregadas por padrão.
+A nova sessão elimina conversas, tentativas e resultados transitórios
+de tarefas anteriores. Ela não remove o acesso ao repositório.
+
+O agente deve reconstruir o contexto necessário a partir de
+`AGENTS.md`, `CURRENT_TASK.md`, código, configurações e validações
+relacionadas.
+
+Em projetos desconhecidos, o agente deve primeiro compreender a
+estrutura, os pontos de entrada e a área afetada. A leitura deve ser
+ampliada conforme o alcance e o risco da mudança, sem carregar o
+repositório inteiro preventivamente.
+
+O contexto não deve ser reiniciado durante a execução da mesma tarefa.
+Tarefas arquivadas e `FUTURE_TASKS.md` não devem ser carregados por
+padrão.
