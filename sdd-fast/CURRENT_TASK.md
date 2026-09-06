@@ -1,18 +1,20 @@
-# Current task: nenhuma
+# Current task: <nome curto>
 
 ## O que fazer
 
-Nenhuma tarefa definida.
+<Um comportamento principal e observável.>
 
 ## O que não fazer
 
-Nenhum limite definido.
+<Limites explícitos da alteração.>
 
 ## Como validar
 
-Nenhuma validação definida.
+<Poucas verificações fundamentais e auditáveis pelo humano.>
 
 ## Checkpoint
 
-Aguardando definição da tarefa.
+- Estado: tarefa ainda não iniciada.
+- Próximo passo: compreender o código relacionado.
+- Bloqueios: nenhum.
 

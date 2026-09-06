@@ -12,15 +12,28 @@
 - Ponto de entrada: <arquivo ou comando principal, quando aplicável>; deve permanecer pequeno e sem lógica do domínio.
 - Nunca fazer: <comportamentos permanentemente proibidos>.
 
+## Contexto por tarefa
+
+- Compreenda o contexto necessário e suficiente para executar a tarefa.
+- Em projetos desconhecidos, examine a estrutura, configurações,
+  pontos de entrada e testes relacionados.
+- Amplie a leitura conforme o alcance e o risco da mudança.
+- Não leia o repositório inteiro sem necessidade.
 
 ## Antes de implementar
 
 - Leia `CURRENT_TASK.md`, o código e as validações relacionadas.
+- Localize funções, classes, contratos, módulos e testes relacionados.
 - Se não houver tarefa definida, solicite uma ao humano.
-- Pergunte somente sobre ambiguidades que possam mudar comportamento, arquitetura, risco ou escopo.
+- Se não compreender o impacto da alteração com segurança, pare e
+  informe o que ainda precisa ser investigado.
+- Pergunte somente sobre ambiguidades que possam mudar comportamento,
+  arquitetura, risco ou escopo.
 - Confirme que a tarefa possui um único comportamento principal.
-- Se houver entregas independentes ou um diff difícil de revisar, pare e proponha tarefas menores.
-- `FUTURE_TASKS.md` é memória do humano, não escopo aprovado.  Não o leia, detalhe ou execute sem solicitação.
+- Se houver entregas independentes ou uma alteração difícil de revisar,
+  pare e proponha tarefas menores.
+- `FUTURE_TASKS.md` é memória do humano, não escopo aprovado.
+  Não o leia, detalhe ou execute sem solicitação.
 
 ## Implementação
 
