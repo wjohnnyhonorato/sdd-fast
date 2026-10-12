@@ -58,6 +58,9 @@
 - Validação bem-sucedida não substitui a aprovação humana.
 - Use evidência adequada à entrega: testes para comportamento determinístico; métricas, diagnósticos causais ou evals quando aplicáveis.
 - Em projetos sem cobertura, proteja somente o comportamento alterado; não crie uma suíte retroativa sem solicitação.
+- Cada item de **Como validar** deve indicar uma afirmação observável, o resultado esperado e a evidência que poderá confirmá-lo.
+- Crie testes e evals a partir do comportamento esperado, não apenas para confirmar a implementação pronta.
+- Não enfraqueça, remova ou ignore uma validação para fazer o resultado passar. Se ela estiver incorreta, pare e consulte o humano.
 
 ## Revisão e conclusão
 

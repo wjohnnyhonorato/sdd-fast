@@ -12,6 +12,10 @@
 
 <Poucas verificações fundamentais e auditáveis pelo humano.>
 
+## Como validar
+
+- [ ] <afirmação observável> — Esperado: <resultado concreto>. Evidência: <teste, comando, métrica, eval, artefato ou procedimento>.
+
 ## Checkpoint
 
 - Estado: tarefa ainda não iniciada.

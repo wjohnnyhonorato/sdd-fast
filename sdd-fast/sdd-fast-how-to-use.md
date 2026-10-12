@@ -102,6 +102,12 @@ Projetos sem testes começam protegendo somente o comportamento alterado pela ta
 
 TDD é útil quando o comportamento esperado é claro, especialmente para bugs e lógica determinística. Não é obrigatório em exploração de dados, protótipos ou trabalhos cuja evidência principal seja experimental.
 
+Cada verificação deve conectar uma afirmação observável, o resultado esperado e uma evidência que o humano consiga inspecionar ou reproduzir.
+
+Testes e evals devem ser derivados do comportamento esperado, não criados apenas para confirmar a implementação existente.
+
+Se uma validação parecer incorreta, ela pode ser revisada, mas somente após explicar o problema e obter aprovação humana. Ela não deve ser enfraquecida apenas  para permitir que a implementação passe.
+
 ## Revisão final
 
 Antes da aprovação, compare o diff com a tarefa em dois eixos:
