@@ -9,8 +9,9 @@
 <Limites explícitos da alteração.>
 
 ## Como validar
-
-- [ ] <afirmação observável> — Esperado: <resultado concreto>. Evidência: <teste, comando, métrica, eval, artefato ou procedimento>.
+- [ ] <comportamento ou propriedade que deve ser demonstrada e observavel>
+- [ ] <resultado concreto que o humano conseguirá inspecionar ou reproduzir>
+- [ ] <evidência, comando, métrica, eval, artefato ou procedimento>
 
 ## Checkpoint
 
