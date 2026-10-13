@@ -1,6 +1,6 @@
 # SDD Fast para Data Science e Agentes
 
-Método enxuto para desenvolver com coding agents com velocidade, controle humano e evidências. Foi pensado para projetos de Data Science, Machine Learning, inferência causal e agentes de IA.
+Método enxuto para desenvolver com coding agents com velocidade, controle humano e evidências. Foi pensado para projetos de software, Data Science, Machine Learning, inferência causal e agentes de IA.
 
 > A tarefa preserva intenção e limites; o código implementa o comportamento; testes, métricas e evals demonstram o funcionamento.
 
@@ -15,28 +15,28 @@ O método não exige roadmap, pasta de especificação por feature, plano técni
 
 ## Arquivos do projeto
 
-|Artefato|Papel|
-|-|-|
-|`AGENTS.md`|Contrato permanente do projeto e instruções para o agente|
-|`CURRENT\_TASK.md`|Única tarefa ativa: comportamento, limites, validação e checkpoint|
-|`FUTURE\_TASKS.md`|Memória opcional de ideias do humano; não autoriza sua execução|
-|`tasks/NNN-nome-curto.md`|Histórico de tarefas concluídas|
-|Código e validações|Comportamento atual e evidências de funcionamento|
-|Git|Histórico técnico e revisão das alterações|
+| Artefato | Papel |
+|---|---|
+| `AGENTS.md` | Contrato permanente do projeto e instruções para o agente |
+| `CURRENT_TASK.md` | Única tarefa ativa: comportamento, limites, validação e checkpoint |
+| `FUTURE_TASKS.md` | Memória opcional de ideias do humano; não autoriza sua execução |
+| `tasks/NNN-nome-curto.md` | Histórico de tarefas concluídas |
+| Código e validações | Comportamento atual e evidências de funcionamento |
+| Git | Histórico técnico e revisão das alterações |
 
-O agente lê `AGENTS.md` e `CURRENT\_TASK.md` para trabalhar. Não carrega `FUTURE\_TASKS.md` nem tarefas arquivadas por padrão. Estas preservam o histórico, sem obrigação de acompanhar futuras mudanças no código.
+O agente lê `AGENTS.md` e `CURRENT_TASK.md` para trabalhar. Não carrega `FUTURE_TASKS.md` nem tarefas arquivadas por padrão. Estas preservam o histórico, sem obrigação de acompanhar futuras mudanças no código.
 
 ## Como começar
 
-1. Copie [AGENTS.md](sdd-fast/AGENTS.md) e [CURRENT\_TASK.md](sdd-fast/CURRENT_TASK.md) para a raiz do projeto. Copie [FUTURE\_TASKS.md](sdd-fast/FUTURE_TASKS.md) se quiser registrar ideias futuras.
+1. Copie [AGENTS.md](sdd-fast/AGENTS.md) e [CURRENT_TASK.md](sdd-fast/CURRENT_TASK.md) para a raiz do projeto. Copie [FUTURE_TASKS.md](sdd-fast/FUTURE_TASKS.md) se quiser registrar ideias futuras.
 2. Preencha no `AGENTS.md` o objetivo, as restrições, a arquitetura e os comandos reais do projeto.
-3. Defina em `CURRENT\_TASK.md` um comportamento principal, o que está fora do escopo e como um humano verificará o resultado.
+3. Defina em `CURRENT_TASK.md` um comportamento principal, o que está fora do escopo e como um humano verificará o resultado.
 
 Para preparar a tarefa com o agente:
 
 ```text
 Leia AGENTS.md e examine progressivamente o projeto. Ajude-me a definir
-CURRENT\_TASK.md com o que fazer, o que não fazer, como validar e checkpoint.
+CURRENT_TASK.md com o que fazer, o que não fazer, como validar e checkpoint.
 Pergunte apenas sobre ambiguidades que possam mudar a solução.
 Não implemente antes da minha aprovação.
 ```
@@ -44,7 +44,7 @@ Não implemente antes da minha aprovação.
 Depois de aprovar a tarefa:
 
 ```text
-Execute CURRENT\_TASK.md, valide o resultado e revise o diff antes de concluir.
+Execute CURRENT_TASK.md, valide o resultado e revise o diff antes de concluir.
 ```
 
 ## Tamanho e contexto da tarefa
@@ -64,18 +64,18 @@ main.py
 pyproject.toml
 uv.lock
 src/
-├── \_\_init\_\_.py
+├── __init__.py
 ├── dados.py
 └── modelo.py
 notebooks/
-└── validate\_pipeline.ipynb
+└── validate_pipeline.ipynb
 ```
 
 Os nomes dos módulos são ilustrativos. Use `uv` para ambiente, dependências e execução; Git para versionamento. Crie apenas os módulos e funções necessários, agrupados por responsabilidade. Toda função tem uma docstring curta com objetivo, entradas, etapas principais e saída. Código enxuto deve continuar fácil de entender.
 
 `main.py` orquestra o fluxo, sem lógica de modelagem, e sua docstring registra a ordem das chamadas. Entre módulos, use chamadas qualificadas, como `dados.carregar(...)`; dentro do mesmo módulo, chamadas diretas são permitidas.
 
-`uv run python main.py` executa o objetivo principal de ponta a ponta. O notebook `notebooks/validate\_pipeline.ipynb` importa os módulos atuais de `src/` e reproduz, uma etapa principal por célula, a mesma ordem e os mesmos parâmetros das chamadas diretas do `main.py`. Cada célula mostra uma saída concisa para inspeção. Não defina funções nem duplique a lógica dos módulos no notebook.
+`uv run python main.py` executa o objetivo principal de ponta a ponta. O notebook `notebooks/validate_pipeline.ipynb` importa os módulos atuais de `src/` e reproduz, uma etapa principal por célula, a mesma ordem e os mesmos parâmetros das chamadas diretas do `main.py`. Cada célula mostra uma saída concisa para inspeção. Não defina funções nem duplique a lógica dos módulos no notebook.
 
 Após mudar `src/`, reinicie o kernel e execute todas as células antes de considerar os resultados do notebook atuais. A execução completa verifica o fluxo, mas a qualidade de um modelo exige as evidências definidas na tarefa.
 
@@ -84,7 +84,7 @@ Após mudar `src/`, reinicie o kernel e execute todas as células antes de consi
 Cada item de “Como validar” conecta **afirmação observável, resultado esperado e evidência** que o humano pode inspecionar ou reproduzir:
 
 ```markdown
-- \[ ] O pipeline conclui a execução. Esperado: gera o arquivo de
+- [ ] O pipeline conclui a execução. Esperado: gera o arquivo de
       resultados. Evidência: executar `uv run python main.py` e
       inspecionar o arquivo produzido.
 ```
@@ -93,14 +93,14 @@ Testes e evals partem do comportamento esperado, não do código já escrito. O 
 
 Escolha a menor evidência confiável para a mudança:
 
-|Mudança|Evidência útil|
-|-|-|
-|Função determinística ou bug|Resultado conhecido ou teste de regressão|
-|Integração|Contrato, entrada e saída observadas|
-|Modelo de ML|Baseline, split adequado, leakage, métricas e cortes relevantes|
-|Inferência causal|Estimand, identificação, pressupostos, overlap e sensibilidade aplicáveis|
-|Agente ou LLM|Contratos de tools, caminhos do grafo, falhas e evals de comportamento|
-|Interface|Comportamento testado e inspeção visual|
+| Mudança | Evidência útil |
+|---|---|
+| Função determinística ou bug | Resultado conhecido ou teste de regressão |
+| Integração | Contrato, entrada e saída observadas |
+| Modelo de ML | Baseline, split adequado, leakage, métricas e cortes relevantes |
+| Inferência causal | Estimand, identificação, pressupostos, overlap e sensibilidade aplicáveis |
+| Agente ou LLM | Contratos de tools, caminhos do grafo, falhas e evals de comportamento |
+| Interface | Comportamento testado e inspeção visual |
 
 Nem toda tarefa requer todas essas verificações. Em projetos sem cobertura, proteja primeiro o comportamento alterado, sem criar uma suíte retroativa por padrão. TDD ajuda quando o comportamento é claro, mas não é obrigatório em exploração ou experimentos.
 
@@ -108,11 +108,11 @@ Nem toda tarefa requer todas essas verificações. Em projetos sem cobertura, pr
 
 Antes de aprovar, revise os arquivos alterados no editor:
 
-* **Escopo:** o resultado atende à tarefa sem acrescentar entregas?
-* **Qualidade:** há complexidade, dependência, abstração ou risco desnecessário?
-* **Evidência:** o procedimento e os resultados permitem verificar as afirmações?
+- **Escopo:** o resultado atende à tarefa sem acrescentar entregas?
+- **Qualidade:** há complexidade, dependência, abstração ou risco desnecessário?
+- **Evidência:** o procedimento e os resultados permitem verificar as afirmações?
 
-O agente informa de forma curta o que alterou, quais validações executou, seus resultados e limitações. A aprovação é do humano. Depois dela, mova a tarefa para `tasks/NNN-nome-curto.md` e deixe `CURRENT\_TASK.md` sem tarefa ativa. Registre uma sugestão em `FUTURE\_TASKS.md` somente com aprovação humana.
+O agente informa de forma curta o que alterou, quais validações executou, seus resultados e limitações. A aprovação é do humano. Depois dela, mova a tarefa para `tasks/NNN-nome-curto.md` e deixe `CURRENT_TASK.md` sem tarefa ativa. Registre uma sugestão em `FUTURE_TASKS.md` somente com aprovação humana.
 
 Uma prática recorrente pode virar uma skill quando demonstrar valor. Revisão por outro agente é opcional em mudanças maiores ou de maior risco.
 
@@ -122,10 +122,9 @@ O [RATIONALE.md](sdd-fast/RATIONALE.md) registra as escolhas do método e sua re
 
 ## Referências
 
-* [DeepLearning.AI — Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents/)
-* [Matt Pocock — Skills for Real Engineers](https://github.com/mattpocock/skills)
-* [Attekita Dev — fluxo de skills](https://www.youtube.com/watch?v=SreK3gB6Gso)
-* [AkitaOnRails — crítica a Harness, Loop e SDD](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
-* [DORA — Working in Small Batches](https://dora.dev/capabilities/working-in-small-batches/)
-* [Thoughtworks Technology Radar — Spec-Driven Development](https://www.thoughtworks.com/radar/techniques/spec-driven-development)
-
+- [DeepLearning.AI — Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents/)
+- [Matt Pocock — Skills for Real Engineers](https://github.com/mattpocock/skills)
+- [Attekita Dev — fluxo de skills](https://www.youtube.com/watch?v=SreK3gB6Gso)
+- [AkitaOnRails — crítica a Harness, Loop e SDD](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
+- [DORA — Working in Small Batches](https://dora.dev/capabilities/working-in-small-batches/)
+- [Thoughtworks Technology Radar — Spec-Driven Development](https://www.thoughtworks.com/radar/techniques/spec-driven-development)
