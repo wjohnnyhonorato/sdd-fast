@@ -71,9 +71,8 @@ Código e validações descrevem o estado atual. Tarefas arquivadas são histór
 <limites que devem ser respeitados>
 
 ## Como validar
-- [ ] <comportamento ou propriedade que deve ser demonstrada e observavel>
-- [ ] <resultado concreto que o humano conseguirá inspecionar ou reproduzir>
-- [ ] <evidência, comando, métrica, eval, artefato ou procedimento>
+## Como validar
+- [ ] <comportamento ou propriedade que deve ser demonstrada e observavel>. <resultado concreto que o humano conseguirá inspecionar ou reproduzir>. <evidência, comando, métrica, eval, artefato ou procedimento>
 
 ## Checkpoint
 <estado atual, próximo passo e eventual bloqueio>
