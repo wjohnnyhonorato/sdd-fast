@@ -9,17 +9,35 @@ futuros e o histórico das entregas.
 
 ## Código compreensível por humanos
 
-O SDD Fast busca produzir a menor solução que atenda à tarefa e possa ser facilmente revisada.
+O SDD Fast busca produzir a menor solução que atenda à tarefa e possa ser facilmente revisada. Módulos e funções devem ter responsabilidades claras, sem divisões artificiais nem código condensado a ponto de dificultar a leitura.
 
-Em projetos Python, o código reutilizável deve ficar em `src/<pacote>`, organizado em módulos temáticos por responsabilidade.
-O ponto de entrada, como `main.py`, deve permanecer pequeno e sem lógica do domínio.
+Em projetos Python, use `uv` para gerir o ambiente, as dependências e a execução; Git continua responsável pelo versionamento. Todas as funções devem ter docstrings curtas com objetivo, entradas, etapas principais e saída. As etapas resumem o processamento sem narrar cada linha.
 
-Módulos e funções devem ser enxutos, coesos e possuir uma responsabilidade clara. Entradas e saídas devem estar explícitas, preferencialmente por meio de tipagem.
+## Padrão para projetos Python de modelagem
 
-Cada função deve possuir documentação curta sobre seu objetivo,
-entradas, saída e regras relevantes, sem narrar mecanicamente a implementação.
+Ao preparar o `AGENTS.md` de um projeto de modelagem, registre este padrão como regra permanente:
 
-Enxuto não significa condensado. Código curto, porém obscuro, não atende a esse princípio. A divisão também não deve criar módulos, funções ou abstrações artificiais.
+```text
+main.py
+pyproject.toml
+uv.lock
+src/
+├── __init__.py
+├── dados.py
+└── modelo.py
+notebooks/
+└── validate_pipeline.ipynb
+```
+
+Os nomes e a quantidade de módulos são exemplos: crie somente os módulos necessários e agrupe em cada um as funções com objetivos semelhantes. `main.py`, na raiz, chama os módulos de `src/` para executar o objetivo principal; a lógica de modelagem fica nos módulos. Sua docstring traz um trace curto, na ordem das chamadas, e é atualizada quando o fluxo muda.
+
+Nas chamadas entre módulos, inclusive em `main.py`, use `modulo.funcao(...)`, evitando importar funções diretamente. Dentro de um mesmo módulo, uma função pode chamar outra diretamente.
+
+`uv run python main.py` deve executar o fluxo principal completo e apresentar resultados concisos. Esse comando verifica a execução ponta a ponta; as evidências sobre a qualidade do modelo são definidas pela tarefa.
+
+O notebook `notebooks/validate_pipeline.ipynb` importa os módulos atuais de `src/` e reproduz, na mesma ordem e com os mesmos parâmetros, as etapas chamadas diretamente pelo `main.py`. Use uma etapa principal por célula, com saída curta que ajude a examinar seu resultado. Não defina funções no notebook nem copie a lógica dos módulos para ele. Funções auxiliares executadas dentro dos módulos não precisam ser chamadas uma segunda vez.
+
+Após alterar `src/`, reinicie o kernel e execute todas as células. Só considere atuais os resultados gerados nessa execução completa; saídas antigas do arquivo não são evidência da versão atual.
 
 ## Artefatos
 
@@ -81,6 +99,8 @@ Toda validação deve ser verificável por um humano. Isso significa apresentar 
 
 A afirmação do agente de que uma validação foi executada ou passou não é evidência suficiente. O agente produz e organiza as evidências; o humano as inspeciona e decide se a tarefa pode ser aprovada.
 
+Em projetos de modelagem, execute `uv run python main.py` para verificar o fluxo completo. Inspecione também o notebook executado do início ao fim e as métricas, testes ou diagnósticos exigidos pela tarefa. Uma execução sem erro não demonstra, por si só, qualidade preditiva ou validade causal.
+
 Isso não significa criar relatórios extensos para todas as tarefas.
 Deve ser usada a menor evidência confiável que permita ao humano
 verificar a afirmação.
@@ -106,7 +126,7 @@ Cada verificação deve conectar uma afirmação observável, o resultado espera
 
 Testes e evals devem ser derivados do comportamento esperado, não criados apenas para confirmar a implementação existente.
 
-Se uma validação parecer incorreta, ela pode ser revisada, mas somente após explicar o problema e obter aprovação humana. Ela não deve ser enfraquecida apenas  para permitir que a implementação passe.
+Se uma validação parecer incorreta, ela pode ser revisada, mas somente após explicar o problema e obter aprovação humana. Ela não deve ser enfraquecida apenas para permitir que a implementação passe.
 
 ## Revisão final
 
