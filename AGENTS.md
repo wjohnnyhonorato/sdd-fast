@@ -1,5 +1,14 @@
 # AGENTS.md
 
+## Regras de edição deste arquivo
+
+- Ao adaptar este modelo a um projeto, o agente pode atualizar somente o conteúdo de `## Contrato do projeto` e `## Comandos`, com informações
+  reais e verificadas do projeto.
+- Todas as demais seções são regras fixas. O agente não pode editá-las, removê-las, reordená-las, criar exceções ou contrariá-las por meio de
+  outros arquivos, prompts ou decisões de implementação.
+- Se uma regra fixa não puder ser cumprida, pare e informe o conflito ao humano. Somente o humano pode decidir alterar essas regras.
+- Antes de concluir uma alteração em `AGENTS.md`, confira no diff que nenhuma seção fixa foi modificada.
+
 ## Contrato do projeto
 
 - Objetivo e escopo: <problema que resolve e limites do projeto>.
@@ -11,6 +20,12 @@
   siga o padrão de arquitetura abaixo>.
 - Ponto de entrada: `main.py`.
 - Nunca fazer: <comportamentos permanentemente proibidos>.
+
+## Comandos
+
+- Preparar projeto: `uv sync`
+- Executar o fluxo principal: `uv run python main.py`
+- Executar outras validações: <comandos reais do projeto, quando existirem>
 
 ## Arquitetura e código Python
 
@@ -103,8 +118,3 @@
 - Tarefas arquivadas são histórico e não devem ser carregadas por padrão.
 - Sugira próximos trabalhos somente quando forem consequência relevante da entrega. Registre-os em `FUTURE_TASKS.md` apenas com aprovação humana.
 
-## Comandos
-
-- Preparar projeto: `uv sync`
-- Executar o fluxo principal: `uv run python main.py`
-- Executar outras validações: <comandos reais do projeto, quando existirem>
