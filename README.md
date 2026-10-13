@@ -28,7 +28,7 @@ O agente lê `AGENTS.md` e `CURRENT_TASK.md` para trabalhar. Não carrega `FUTUR
 
 ## Como começar
 
-1. Copie [AGENTS.md](sdd-fast/AGENTS.md) e [CURRENT_TASK.md](sdd-fast/CURRENT_TASK.md) para a raiz do projeto. Copie [FUTURE_TASKS.md](sdd-fast/FUTURE_TASKS.md) se quiser registrar ideias futuras.
+1. Copie [AGENTS.md](AGENTS.md) e [CURRENT_TASK.md](CURRENT_TASK.md) para a raiz do projeto. Copie [FUTURE_TASKS.md](FUTURE_TASKS.md) se quiser registrar ideias futuras.
 2. Preencha no `AGENTS.md` o objetivo, as restrições, a arquitetura e os comandos reais do projeto.
 3. Defina em `CURRENT_TASK.md` um comportamento principal, o que está fora do escopo e como um humano verificará o resultado.
 
@@ -57,7 +57,7 @@ O checkpoint registra somente estado atual, próximo passo e bloqueios. Passos i
 
 ## Código e arquitetura em projetos Python de modelagem
 
-O [modelo de AGENTS.md](sdd-fast/AGENTS.md) estabelece este padrão para os projetos de modelagem:
+O [modelo de AGENTS.md](AGENTS.md) estabelece este padrão para os projetos de modelagem:
 
 ```text
 main.py
@@ -118,7 +118,7 @@ Uma prática recorrente pode virar uma skill quando demonstrar valor. Revisão p
 
 ## Por que este formato
 
-O [RATIONALE.md](sdd-fast/RATIONALE.md) registra as escolhas do método e sua relação com o SDD do curso da DeepLearning.AI. Ele serve à revisão do método; o agente não precisa lê-lo a cada tarefa.
+O [RATIONALE.md](RATIONALE.md) registra as escolhas do método e sua relação com o SDD do curso da DeepLearning.AI. Ele serve à revisão do método; o agente não precisa lê-lo a cada tarefa.
 
 ## Referências
 
