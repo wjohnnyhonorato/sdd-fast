@@ -41,11 +41,14 @@
 
 - Mantenha `main.py` na raiz como ponto de entrada do projeto.
 - Mantenha os módulos Python em `src/`. Cada módulo agrupa funções com objetivos semelhantes; crie um novo módulo somente quando houver uma responsabilidade distinta.
+- Concentre todos os parâmetros ajustáveis do projeto em `config.yml`, na raiz. Não espalhe valores de configuração pelo código ou notebook.
+- Documente cada chave no próprio YAML, em comentário imediatamente acima dela: explique brevemente sua finalidade e liste as funções que a utilizam no formato `modulo.funcao`. Atualize o comentário quando o uso mudar.
+- `main.py` e `notebooks/validate_pipeline.ipynb` devem carregar o mesmo `config.yml` por meio de uma função em `src/`.
+- Não coloque senhas, tokens ou outras credenciais no YAML.
 - `main.py` deve orquestrar chamadas aos módulos de `src/`, sem conter a lógica de modelagem.
 - A docstring de `main.py` deve apresentar, em ordem, um trace curto das funções que ele chama. Atualize esse trace quando o fluxo mudar.
 - Use chamadas qualificadas em `main.py`, como `dados.carregar(...)` e `modelo.treinar(...)`.
-- O comando `uv run python main.py` deve executar o objetivo principal do projeto do início ao fim e apresentar resultados
-  concisos que permitam verificar a execução.
+- O comando `uv run python main.py` deve executar o objetivo principal do projeto do início ao fim e apresentar resultados concisos que permitam verificar a execução.
 
 ## Notebook de validação da modelagem
 
