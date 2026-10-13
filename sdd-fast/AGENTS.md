@@ -7,10 +7,41 @@
 - Entrega esperada: <resultado principal>.
 - Invariantes: <regras que nenhuma tarefa pode violar>.
 - Base técnica: <tecnologias estruturais e estáveis>.
-- Arquitetura: <estrutura estável do projeto; em Python, prefira
-  código reutilizável em `src/<pacote>` e módulos organizados por responsabilidade>.
-- Ponto de entrada: <arquivo ou comando principal, quando aplicável>; deve permanecer pequeno e sem lógica do domínio.
+- Arquitetura: <descreva os módulos de `src/` e suas responsabilidades;
+  siga o padrão de arquitetura abaixo>.
+- Ponto de entrada: `main.py`.
 - Nunca fazer: <comportamentos permanentemente proibidos>.
+
+## Arquitetura e código Python
+
+- Use `uv` para criar o ambiente, gerir dependências e executar
+  comandos Python do projeto. Use Git para versionamento.
+- Mantenha a menor quantidade de módulos e funções que permita compreender e revisar a solução. Não crie divisões artificiais.
+- Mantenha cada função enxuta, com uma responsabilidade clara e somente o código necessário para cumpri-la. Não comprima código quando isso prejudicar a compreensão.
+- Documente todas as funções com docstring curta contendo: objetivo, entradas, etapas principais do processamento e saída. Descreva as etapas em linguagem simples, sem narrar cada linha.
+- Mantenha entradas e saídas explícitas, preferencialmente com tipos.
+- Nas chamadas entre módulos, use `modulo.funcao(...)`, evitando importar funções diretamente. Dentro do mesmo módulo, chamadas diretas são permitidas.
+
+## Estrutura dos projetos de modelagem
+
+- Mantenha `main.py` na raiz como ponto de entrada do projeto.
+- Mantenha os módulos Python em `src/`. Cada módulo agrupa funções com objetivos semelhantes; crie um novo módulo somente quando houver uma responsabilidade distinta.
+- `main.py` deve orquestrar chamadas aos módulos de `src/`, sem conter a lógica de modelagem.
+- A docstring de `main.py` deve apresentar, em ordem, um trace curto das funções que ele chama. Atualize esse trace quando o fluxo mudar.
+- Use chamadas qualificadas em `main.py`, como `dados.carregar(...)` e `modelo.treinar(...)`.
+- O comando `uv run python main.py` deve executar o objetivo principal do projeto do início ao fim e apresentar resultados
+  concisos que permitam verificar a execução.
+
+## Notebook de validação da modelagem
+
+- Mantenha `notebooks/validate_pipeline.ipynb`.
+- O notebook deve importar os módulos atuais de `src/` e reproduzir, na mesma ordem e com os mesmos parâmetros, as etapas chamadas
+  diretamente por `main.py`.
+- Coloque uma etapa principal por célula. Cada célula deve mostrar uma saída concisa e útil para inspecionar o resultado daquela etapa.
+- Não defina funções no notebook nem copie para ele a lógica de `src/`. Funções auxiliares chamadas dentro dos módulos não precisam
+  ser executadas uma segunda vez no notebook.
+- Após mudanças nos módulos, reinicie o kernel e execute todas as células antes de considerar os resultados do notebook válidos. Resultados antigos exibidos no arquivo não são evidência atual.
+- `uv run python main.py` é a verificação principal da execução completa. O notebook permite inspecionar as etapas. Testes, métricas e diagnósticos adicionais seguem o risco e os critérios da tarefa.
 
 ## Contexto por tarefa
 
@@ -41,8 +72,6 @@
 - Implemente a menor solução coerente que atenda à tarefa.
 - Preserve comportamento e arquivos fora do escopo.
 - Não adicione dependências, refatorações, abstrações ou documentos sem necessidade para a tarefa.
-- Prefira módulos e funções pequenos e coesos, cada um com responsabilidade, entradas e saídas claras.
-- Documente cada função de forma curta, explicando objetivo, entradas, saída e regras relevantes, sem narrar a implementação.
 - Mantenha entradas e saídas explícitas, preferencialmente com tipagem.
 - Para ampliar o escopo ou enfraquecer a validação, solicite aprovação.
 - Passos internos podem orientar a execução, mas não devem virar novas entregas, artefatos ou ciclos completos de validação.
@@ -76,5 +105,6 @@
 
 ## Comandos
 
-- Preparar projeto: `<comando do projeto>`
-- Executar validações: `<comando de validação>`
+- Preparar projeto: `uv sync`
+- Executar o fluxo principal: `uv run python main.py`
+- Executar outras validações: <comandos reais do projeto, quando existirem>
