@@ -1,5 +1,5 @@
 ---
-name: sdd-fast-start
+name: sddstart
 description: Prepare a new or existing project for SDD-Fast, or resume work after switching projects. Use when the user asks to start, adopt, or resume the method; stop before implementing a task.
 ---
 
@@ -14,13 +14,15 @@ Objetivo: deixar o projeto e a tarefa atual prontos para uma sessão de trabalho
    - **Novo:** faltam os dois arquivos. Prepare a adoção do método.
    - **Parcial:** falta um deles. Preserve o existente e acrescente apenas o ausente.
    - **Retomada:** ambos existem. Leia-os; não recopie modelos nem reescreva o contrato.
-3. Leia as instruções em `AGENTS.md` e informe conflitos antes de realizar alguma modificação.
+3. Obtenha os modelos `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` da cópia local do método indicada pelo humano. Se não houver caminho, procure uma cópia local reconhecível. Confirme que são os arquivos do método antes de copiá-los. Se nenhuma fonte estiver disponível, peça o caminho ao humano; não improvise os modelos.
+4. Copiar `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` para a raiz do projeto. Se algum arquivo já existir, preserve-o e não o sobrescreva.
+5. Leia as instruções em `AGENTS.md` e informe conflitos antes de realizar alguma modificação. 
+6. Se o conteúdo das sessões fixas de `AGENTS.md` do projeto for diferente das sessões fixas presentes em `sdd-fast/AGENTS.md`, atualize para refletir o estado visto na pasta sdd-fast/AGENTS.md.
 
 ## Novo projeto ou adoção parcial
 
-1. Obtenha os modelos `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` da cópia local do método indicada pelo humano. Se não houver caminho, procure uma cópia local reconhecível. Como alternativa, use a versão `develop` de `https://github.com/wjohnnyhonorato/sdd-fast`, se acessível. Confirme que são os arquivos do método antes de copiá-los. Se nenhuma fonte estiver disponível, peça o caminho ao humano; não improvise os modelos.
-3. Para um `AGENTS.md` recém-copiado, investigue apenas o necessário para preencher `## Contrato do projeto` e `## Comandos` com fatos verificáveis. Não altere as demais seções. Em projeto existente, relate incompatibilidades com a arquitetura prescrita sem refatorá-lo nesta etapa.
-4. Se faltarem objetivo, usuário, entrega ou restrições que mudem o contrato, faça perguntas curtas. Não invente dados para substituir campos ainda indefinidos.
+1. Para um `AGENTS.md` recém-copiado, investigue apenas o necessário para preencher `## Contrato do projeto` e `## Comandos` com fatos verificáveis. Não altere as demais seções. Em projeto existente, relate incompatibilidades com a arquitetura prescrita sem refatorá-lo nesta etapa.
+2. Se faltarem objetivo, usuário, entrega ou restrições que mudem o contrato, faça perguntas curtas. Não invente dados para substituir campos ainda indefinidos.
 
 ## Tarefa atual
 
