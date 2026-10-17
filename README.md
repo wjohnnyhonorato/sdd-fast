@@ -64,6 +64,7 @@ O [modelo de AGENTS.md](AGENTS.md) estabelece este padrão para os projetos de m
 
 ```text
 main.py
+config.yml
 pyproject.toml
 uv.lock
 src/
