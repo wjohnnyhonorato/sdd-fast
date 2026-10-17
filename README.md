@@ -19,27 +19,30 @@ O método não exige roadmap, pasta de especificação por feature, plano técni
 |---|---|
 | `AGENTS.md` | Contrato permanente do projeto e instruções para o agente |
 | `CURRENT_TASK.md` | Única tarefa ativa: comportamento, limites, validação e checkpoint |
-| `FUTURE_TASKS.md` | Memória opcional de ideias do humano; não autoriza sua execução |
+| `FUTURE_TASKS.md` | Memória de possíveis trabalhos e dependências; não autoriza sua execução |
 | `tasks/NNN-nome-curto.md` | Histórico de tarefas concluídas |
 | Código e validações | Comportamento atual e evidências de funcionamento |
 | Git | Histórico técnico e revisão das alterações |
 
-O agente lê `AGENTS.md` e `CURRENT_TASK.md` para trabalhar. Não carrega `FUTURE_TASKS.md` nem tarefas arquivadas por padrão. Estas preservam o histórico, sem obrigação de acompanhar futuras mudanças no código.
+O agente lê `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` no início de cada tarefa. As ideias futuras ajudam a identificar dependências e a escolher a próxima tarefa, mas somente `CURRENT_TASK.md` define o escopo aprovado. O humano pode pedir mudanças em `FUTURE_TASKS.md` a qualquer momento; o agente pode sugerir ideias, mas só registra, altera ou remove itens quando receber um pedido explícito. Tarefas arquivadas são histórico e não são carregadas por padrão.
 
 ## Como começar
 
-1. Copie [AGENTS.md](AGENTS.md) e [CURRENT_TASK.md](CURRENT_TASK.md) para a raiz do projeto. Copie [FUTURE_TASKS.md](FUTURE_TASKS.md) se quiser registrar ideias futuras.
+1. Copie [AGENTS.md](AGENTS.md), [CURRENT_TASK.md](CURRENT_TASK.md) e [FUTURE_TASKS.md](FUTURE_TASKS.md) para a raiz do projeto.
 2. Preencha no `AGENTS.md` o objetivo, as restrições, a arquitetura e os comandos reais do projeto.
 3. Defina em `CURRENT_TASK.md` um comportamento principal, o que está fora do escopo e como um humano verificará o resultado.
 
 Para preparar a tarefa com o agente:
 
 ```text
-Leia AGENTS.md e examine progressivamente o projeto. Ajude-me a definir
-CURRENT_TASK.md com o que fazer, o que não fazer, como validar e checkpoint.
+Leia AGENTS.md, CURRENT_TASK.md e FUTURE_TASKS.md. Examine progressivamente
+o projeto. Ajude-me a definir uma tarefa atual com o que fazer,
+o que não fazer, como validar e checkpoint.
 Pergunte apenas sobre ambiguidades que possam mudar a solução.
 Não implemente antes da minha aprovação.
 ```
+
+Se usar Devin CLI, instale a pasta [sddstart](.agents/skills/sddstart/) no projeto ou nas skills pessoais e chame `/sddstart`. A skill prepara os arquivos e a tarefa; ela para antes da implementação.
 
 Depois de aprovar a tarefa:
 
@@ -51,7 +54,7 @@ Execute CURRENT_TASK.md, valide o resultado e revise o diff antes de concluir.
 
 Uma tarefa entrega uma mudança observável, pode ser validada isoladamente e produz uma alteração que o humano consegue revisar, preferencialmente em uma sessão. Se houver entregas independentes ou o trabalho crescer demais, divida em tarefas verticais sequenciais.
 
-Prefira iniciar cada tarefa em uma nova sessão do coding agent. O agente reconstrói o contexto a partir da tarefa, do contrato, da estrutura, do código e das validações relacionadas. Em projetos desconhecidos, amplia a leitura conforme o alcance e o risco da mudança, sem carregar preventivamente o repositório inteiro. Não reinicie a sessão no meio da mesma tarefa.
+Prefira iniciar cada tarefa em uma nova sessão do coding agent. O agente reconstrói o contexto a partir do contrato, da tarefa, dos lembretes futuros, da estrutura, do código e das validações relacionadas. Em projetos desconhecidos, amplia a leitura conforme o alcance e o risco da mudança, sem carregar preventivamente o repositório inteiro. Não reinicie a sessão no meio da mesma tarefa.
 
 O checkpoint registra somente estado atual, próximo passo e bloqueios. Passos internos não precisam virar subtarefas documentadas ou ciclos completos de validação.
 
@@ -112,7 +115,7 @@ Antes de aprovar, revise os arquivos alterados no editor:
 - **Qualidade:** há complexidade, dependência, abstração ou risco desnecessário?
 - **Evidência:** o procedimento e os resultados permitem verificar as afirmações?
 
-O agente informa de forma curta o que alterou, quais validações executou, seus resultados e limitações. A aprovação é do humano. Depois dela, mova a tarefa para `tasks/NNN-nome-curto.md` e deixe `CURRENT_TASK.md` sem tarefa ativa. Registre uma sugestão em `FUTURE_TASKS.md` somente com aprovação humana.
+O agente informa de forma curta o que alterou, quais validações executou, seus resultados e limitações. A aprovação é do humano. Depois dela, mova a tarefa para `tasks/NNN-nome-curto.md` e deixe `CURRENT_TASK.md` sem tarefa ativa. Sugestões de trabalhos futuros só entram em `FUTURE_TASKS.md` se o humano pedir.
 
 Uma prática recorrente pode virar uma skill quando demonstrar valor. Revisão por outro agente é opcional em mudanças maiores ou de maior risco.
 

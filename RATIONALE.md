@@ -69,7 +69,7 @@ O curso se aproxima de **spec as source of truth**: a especificação orienta e 
 |---|---|
 | `AGENTS.md` | Contrato permanente e pequeno do projeto |
 | `CURRENT_TASK.md` | Âncora temporária da intenção, dos limites e da validação |
-| `FUTURE_TASKS.md` | Memória humana de possibilidades, sem representar escopo aprovado |
+| `FUTURE_TASKS.md` | Memória consultada em cada tarefa para dependências e próximas escolhas, sem representar escopo aprovado |
 | Código | Comportamento executável atual |
 | Testes, métricas e evals | Evidência do comportamento e da qualidade |
 | `tasks/` | Histórico da intenção no momento da entrega, sem obrigação de sincronização futura |
@@ -118,7 +118,7 @@ Legenda:
 | Sincronizar specs e código | Redefinida | Apenas a tarefa ativa precisa refletir o trabalho atual | Arquivos arquivados são registro histórico, não documentação operacional |
 | Versionar specs e código juntos | Mantida | Todos os artefatos úteis permanecem no Git | Permite revisar a intenção junto do diff que a implementou |
 | Fazer commits pequenos | Mantida como prática | Commits acompanham mudanças coerentes e revisáveis | Melhora revisão e recuperação, sem exigir um commit por item burocrático |
-| Preservar contexto entre sessões | Redefinida | Cada tarefa começa preferencialmente em uma nova sessão, que reconstrói o contexto a partir do contrato, da tarefa, do checkpoint e do projeto | Evita carregar conversas antigas sem perder o contexto técnico persistido |
+| Preservar contexto entre sessões | Redefinida | Cada tarefa começa preferencialmente em uma nova sessão, que reconstrói o contexto a partir do contrato, da tarefa, dos lembretes futuros, do checkpoint e do projeto | Evita carregar conversas antigas sem perder o contexto técnico persistido |
 | Usar checkpoint para continuidade | Simplificada | Estado atual, próximo passo e bloqueio | Não deve virar diário de comandos ou duplicação do Git |
 | Manter o humano como arquiteto e responsável final | Mantida | Humano aprova escopo e resultado | O agente amplia execução, mas não assume responsabilidade técnica ou de negócio |
 | Autorizar comandos e ações do agente com cuidado | Mantida | Regras de segurança ficam no harness e no contrato do projeto | Autonomia deve respeitar risco, credenciais e reversibilidade |

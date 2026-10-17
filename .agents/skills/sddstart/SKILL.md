@@ -1,37 +1,48 @@
 ---
 name: sddstart
-description: Prepare a new or existing project for SDD-Fast, or resume work after switching projects. Use when the user asks to start, adopt, or resume the method; stop before implementing a task.
+description: Inicia ou retoma o SDD-Fast no projeto atual. Use ao adotar o método, trocar de projeto ou preparar a próxima tarefa; pare antes de implementar.
 ---
 
 # Iniciar ou retomar SDD-Fast
 
-Objetivo: deixar o projeto e a tarefa atual prontos para uma sessão de trabalho curta. Esta skill prepara contexto; as regras permanentes continuam em `AGENTS.md`.
+Prepare o projeto e uma única tarefa para revisão humana. As regras permanentes estão em AGENTS.md.
 
-## Identifique o cenário
+## Fluxo
 
-1. Confirme a raiz do projeto atual. Examine a lista de arquivos da raiz, o estado do Git quando existir, os pontos de entrada, a configuração de ambiente e as validações relacionadas. Amplie a leitura somente se necessário.
-2. Determine se o projeto já tem `AGENTS.md` e `CURRENT_TASK.md`:
-   - **Novo:** faltam os dois arquivos. Prepare a adoção do método.
-   - **Parcial:** falta um deles. Preserve o existente e acrescente apenas o ausente.
-   - **Retomada:** ambos existem. Leia-os; não recopie modelos nem reescreva o contrato.
-3. Obtenha os modelos `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` da cópia local do método indicada pelo humano. Se não houver caminho, procure uma cópia local reconhecível. Confirme que são os arquivos do método antes de copiá-los. Se nenhuma fonte estiver disponível, peça o caminho ao humano; não improvise os modelos.
-4. Copiar `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` para a raiz do projeto. Se algum arquivo já existir, preserve-o e não o sobrescreva.
-5. Leia as instruções em `AGENTS.md` e informe conflitos antes de realizar alguma modificação. 
-6. Se o conteúdo das sessões fixas de `AGENTS.md` do projeto for diferente das sessões fixas presentes em `sdd-fast/AGENTS.md`, atualize para refletir o estado visto na pasta sdd-fast/AGENTS.md.
+```mermaid
+flowchart TD
+    A["Identificar projeto e arquivos"] --> B{"Falta algum dos três arquivos?"}
+    B -- "Sim" --> C["Copiar somente os ausentes"]
+    B -- "Não" --> D["Ler AGENTS, CURRENT e FUTURE"]
+    C --> D
+    D --> E{"CURRENT contém tarefa real?"}
+    E -- "Sim" --> F["Preservar tarefa e checkpoint"]
+    E -- "Não" --> G["Sugerir opções; humano escolhe"]
+    F --> H["Informar próximo passo e parar"]
+    G --> H
+```
 
-## Novo projeto ou adoção parcial
+## 1. Identificar o estado
 
-1. Para um `AGENTS.md` recém-copiado, investigue apenas o necessário para preencher `## Contrato do projeto` e `## Comandos` com fatos verificáveis. Não altere as demais seções. Em projeto existente, relate incompatibilidades com a arquitetura prescrita sem refatorá-lo nesta etapa.
-2. Se faltarem objetivo, usuário, entrega ou restrições que mudem o contrato, faça perguntas curtas. Não invente dados para substituir campos ainda indefinidos.
+- Confirme a raiz do projeto. Examine a estrutura, o Git, os pontos de entrada e as validações pertinentes, ampliando a leitura somente conforme a necessidade.
+- Verifique AGENTS.md, CURRENT_TASK.md e FUTURE_TASKS.md. Se AGENTS.md existir, leia suas regras antes de editar qualquer arquivo. Preserve as instruções já presentes.
 
-## Tarefa atual
+## 2. Completar apenas arquivos ausentes
 
-1. Leia `CURRENT_TASK.md` e `FUTURE_TASKS.md`. Se houver uma tarefa real, preserve-a e use o checkpoint para identificar estado, próximo passo e bloqueios. Não a troque por outra ideia automaticamente.
-2. Se não houver tarefa real, use `FUTURE_TASKS.md` como base de sugestão, se `FUTURE_TASKS.md` estiver vazio use o `## Contrato do projeto` como base de sugestão. FAça perguntas para definir **um comportamento principal**, limites e itens de `Como validar`. Cada item deve conter afirmação observável, resultado esperado e evidência reproduzível pelo humano, preencha `CURRENT_TASK.md` quando houver informação suficiente; caso contrário, faça apenas mais perguntas.
-3. Não use uma ideia futura contida em `FUTURE_TASKS.md` como escopo aprovado.
+- Somente se faltar algum dos três arquivos, obtenha os modelos da cópia local do SDD-Fast indicada pelo humano. Se não houver caminho, procure uma cópia local reconhecível; como alternativa, consulte a branch develop de https://github.com/wjohnnyhonorato/sdd-fast, se acessível. Confirme a origem. Se não encontrar os modelos, solicite o caminho e pare; não improvise.
+- Copie apenas os arquivos ausentes para a raiz do projeto. Nunca sobrescreva arquivos existentes.
+- Se AGENTS.md foi copiado agora, preencha somente Contrato do projeto e Comandos com informações verificadas. Se faltar decisão de objetivo, usuário ou limite, peça-a ao humano.
+- Se tiver acesso ao modelo do método e encontrar divergências nas seções fixas de um AGENTS.md existente, informe-as ao humano. Não altere essas seções nem refatore a arquitetura nesta etapa.
 
-## Encerramento
+## 3. Preparar a tarefa
 
-- Pare antes da implementação. Não instale dependências, crie código, execute testes extensos, arquive tarefas ou altere a estrutura do projeto nesta preparação.
-- Confira os arquivos modificados e, se `AGENTS.md` mudou, verifique no diff que apenas `## Contrato do projeto` e `## Comandos` foram editados.
-- Responda de forma curta: projeto identificado, situação do método, tarefa atual, arquivos preparados e decisão ou informação necessária para começar. Se uma tarefa já estiver pronta e aprovada, indique que a próxima sessão pode executá-la.
+- Leia AGENTS.md, CURRENT_TASK.md e FUTURE_TASKS.md. As ideias futuras informam dependências e possíveis próximas tarefas; não constituem escopo aprovado.
+- O humano pode pedir mudanças em FUTURE_TASKS.md em qualquer momento; sugira ideias quando pertinente, mas só registre, altere ou remova itens mediante pedido explícito dele.
+- Se CURRENT_TASK.md contiver uma tarefa real, preserve seu escopo e seu checkpoint. Informe apenas conflitos ou dependências relevantes encontrados em FUTURE_TASKS.md.
+- Se não houver tarefa real, apresente até duas opções concisas de FUTURE_TASKS.md; se ele contiver só o modelo vazio, use o Contrato do projeto. Peça ao humano que escolha ou descreva outra tarefa. Só então defina em CURRENT_TASK.md um comportamento principal, limites e validações com afirmação observável, resultado esperado e evidência verificável. Se a escolha ou um requisito decisivo estiver ausente, pare sem preencher a tarefa.
+
+## 4. Encerrar
+
+- Pare antes de implementar. Não instale dependências, crie código, rode testes extensos ou arquive tarefas.
+- Confira os arquivos alterados. Se AGENTS.md mudou, verifique que apenas Contrato do projeto e Comandos foram editados.
+- Responda brevemente: estado do projeto, arquivos preparados, tarefa atual e próximo passo ou decisão pendente. Não presuma aprovação da tarefa.

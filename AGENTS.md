@@ -71,7 +71,7 @@
 
 ## Antes de implementar
 
-- Leia `CURRENT_TASK.md`, o código e as validações relacionadas.
+- Leia `CURRENT_TASK.md` e `FUTURE_TASKS.md` no início de cada tarefa, além do código e das validações relacionadas.
 - Localize funções, classes, contratos, módulos e testes relacionados.
 - Se não houver tarefa definida, solicite uma ao humano.
 - Se não compreender o impacto da alteração com segurança, pare e
@@ -81,8 +81,9 @@
 - Confirme que a tarefa possui um único comportamento principal.
 - Se houver entregas independentes ou uma alteração difícil de revisar,
   pare e proponha tarefas menores.
-- `FUTURE_TASKS.md` é memória do humano, não escopo aprovado.
-  Não o leia, detalhe ou execute sem solicitação.
+- `FUTURE_TASKS.md` informa dependências e possíveis próximos trabalhos. Leia-o,
+  mas não trate seus itens como escopo aprovado nem os execute sem escolha do humano.
+- O humano pode pedir a inclusão, alteração ou remoção de lembretes em `FUTURE_TASKS.md` a qualquer momento. O agente pode sugerir itens, mas só modifica esse arquivo mediante pedido explícito do humano; nunca registra tarefas futuras por iniciativa própria.
 
 ## Implementação
 
@@ -119,5 +120,5 @@
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
   `CURRENT_TASK.md` como sem tarefa.
 - Tarefas arquivadas são histórico e não devem ser carregadas por padrão.
-- Sugira próximos trabalhos somente quando forem consequência relevante da entrega. Registre-os em `FUTURE_TASKS.md` apenas com aprovação humana.
+- Sugira próximos trabalhos somente quando forem consequência relevante da entrega. Registre-os em `FUTURE_TASKS.md` somente se o humano pedir.
 
