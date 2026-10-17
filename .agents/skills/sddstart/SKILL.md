@@ -9,11 +9,12 @@ Prepare os arquivos do método e, se necessário, uma tarefa para revisão human
 
 ## Regras invariantes
 
-1. Leia o AGENTS.md existente antes de editar arquivos. Nunca substitua arquivos existentes por modelos nem altere as seções fixas de AGENTS.md. Informe divergências entre elas e o modelo do método.
-2. Leia CURRENT_TASK.md e FUTURE_TASKS.md. FUTURE_TASKS.md informa dependências e opções; seus itens não autorizam implementação. Sugira ideias, mas só registre, altere ou remova itens nele mediante pedido explícito do humano.
-3. Preserve uma tarefa real e seu checkpoint em CURRENT_TASK.md. Se não houver tarefa real, só preencha o arquivo depois que o humano escolher ou descrever a tarefa; o texto produzido ainda precisa de aprovação.
-4. Se faltar modelo, escolha humana ou informação decisiva sobre objetivo, usuário ou limites, informe o bloqueio e pare. Não improvise requisitos.
-5. Pare antes de implementar, instalar dependências, executar testes extensos ou arquivar tarefas.
+1. Siga o Fluxo de decisão pelas setas e condições. Execute somente os blocos do caminho escolhido; os itens de Execução detalham os blocos de mesmo número, não formam uma sequência a executar inteira. Se houver conflito entre fluxo e texto, pare e informe o humano.
+2. Leia o AGENTS.md existente antes de editar arquivos. Nunca substitua arquivos existentes por modelos nem altere as seções fixas de AGENTS.md. Informe divergências entre elas e o modelo do método.
+3. Leia CURRENT_TASK.md e FUTURE_TASKS.md. FUTURE_TASKS.md informa dependências e opções; seus itens não autorizam implementação. Sugira ideias, mas só registre, altere ou remova itens nele mediante pedido explícito do humano.
+4. Preserve uma tarefa real e seu checkpoint em CURRENT_TASK.md. Se não houver tarefa real, só preencha o arquivo depois que o humano escolher ou descrever a tarefa; o texto produzido ainda precisa de aprovação.
+5. Se faltar modelo, escolha humana ou informação decisiva sobre objetivo, usuário ou limites, informe o bloqueio e pare. Não improvise requisitos.
+6. Pare antes de implementar, instalar dependências, executar testes extensos ou arquivar tarefas.
 
 ## Fluxo de decisão
 
