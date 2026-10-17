@@ -123,7 +123,9 @@ O [RATIONALE.md](RATIONALE.md) registra as escolhas do método e sua relação c
 ## Referências
 
 - [DeepLearning.AI — Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents/)
+- [Materiais práticos do curso](https://github.com/https-deeplearning-ai/sc-spec-driven-development-files)
 - [Matt Pocock — Skills for Real Engineers](https://github.com/mattpocock/skills)
+- [Tech Leads Club — TLC Spec Lean](https://github.com/tech-leads-club/agent-skills/blob/main/packages/skills-catalog/skills/(development)/tlc-spec-lean/SKILL.md)
 - [Attekita Dev — fluxo de skills](https://www.youtube.com/watch?v=SreK3gB6Gso)
 - [AkitaOnRails — crítica a Harness, Loop e SDD](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
 - [DORA — Working in Small Batches](https://dora.dev/capabilities/working-in-small-batches/)

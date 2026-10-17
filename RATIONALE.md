@@ -23,7 +23,7 @@ O SDD Fast procura preservar o valor do SDD sem transformar documentação em um
 
 O curso demonstra que um agente trabalha melhor quando recebe contexto que não consegue inferir apenas do código: objetivo, restrições, escolhas relevantes e critérios de sucesso. Também separa planejamento, implementação e validação, mantendo o humano responsável pela aceitação.
 
-O SDD Fast preserva essa base, mas reduz a quantidade e a longevidade dos documentos.
+O repositório de materiais do curso mostra os artefatos e o fluxo usados como base da comparação abaixo. O SDD Fast preserva a intenção e a validação, mas reduz a quantidade e a longevidade dos documentos.
 
 ### Matt Pocock: práticas pequenas e combináveis
 
@@ -38,6 +38,10 @@ As ideias mais importantes incorporadas ao SDD Fast são:
 - transformar uma prática em skill somente quando ela for recorrente.
 
 O SDD Fast não exige instalar um conjunto de skills. Skills são extensões opcionais do método, não pré-requisitos.
+
+### TLC Spec Lean: compromissos verificáveis
+
+O TLC Spec Lean trata cada verificação como uma afirmação observável com resultado concreto e prova. Testes derivam do comportamento esperado; uma verificação não é enfraquecida para fazer o código passar. O SDD Fast incorpora esses três cuidados em `CURRENT_TASK.md` e na validação, sem exigir o plano, os artefatos e o verificador independente previstos naquela skill.
 
 ### Attekita Dev: um fluxo profissional visível
 
@@ -170,6 +174,7 @@ Se essas respostas não forem claras, o método não cresce.
 - [DeepLearning.AI — Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents/)
 - [Repositório de materiais do curso](https://github.com/https-deeplearning-ai/sc-spec-driven-development-files)
 - [Matt Pocock — Skills for Real Engineers](https://github.com/mattpocock/skills)
+- [Tech Leads Club — TLC Spec Lean](https://github.com/tech-leads-club/agent-skills/blob/main/packages/skills-catalog/skills/(development)/tlc-spec-lean/SKILL.md)
 - [Attekita Dev — O Fluxo de Skills que faz a IA Programar Como um Engenheiro de Verdade](https://www.youtube.com/watch?v=SreK3gB6Gso)
 - [Fabio Akita — Hot take: Harness, Loop Engineering, Graph Engineering são Bullshit](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
 
