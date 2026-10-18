@@ -116,7 +116,7 @@
 - Não reproduza o diff nem arquivos completos no chat.
 - Informe de forma curta: alterações, validações, resultados e limitações, listando módulos e funções alterados.
 - O humano revisa as alterações detalhadas no editor.
-- Antes de cada commit preparado pelo agente e ao concluir a tarefa, verifique se houve atrito relevante na implementação. Registre em `CURRENT_TASK.md`, na seção **Atrito no processo de implementação**, somente fatos novos com impacto e evidência; se não houver, deixe-a sem itens. Não duplique relatos nem crie commits só para registrar atrito.
+- Antes de cada commit preparado pelo agente e ao concluir a tarefa, verifique se houve atrito relevante na implementação. Registre em `CURRENT_TASK.md`, na seção **Atritos no processo de implementação**, somente fatos novos com impacto e evidência; se não houver, deixe-a sem itens. Não duplique relatos nem crie commits só para registrar atrito.
 - Se o humano fizer um commit fora da sessão, o agente só pode avaliar atritos conhecidos ao voltar a observar o repositório; não suponha que acompanhou o trabalho em segundo plano.
 - Aguarde aprovação antes de arquivar a tarefa.
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e redefina
