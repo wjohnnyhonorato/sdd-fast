@@ -61,6 +61,14 @@ O SDD Fast aceita o núcleo dessa crítica:
 - agentes adicionais, grafos e skills não são requisitos do desenvolvimento cotidiano;
 - uma nova etapa só é aceita se reduzir um problema observável.
 
+### Skills e kaizen: aprender com o trabalho realizado
+
+No workflow do Akita, skills guardam procedimentos recorrentes; `AGENTS.md` guarda instruções do projeto. Após cada rodada, ele examina erros e demoras e registra a correção no menor lugar útil: teste, instrução, skill ou ferramenta.
+
+No SDD Fast, `SKILL.template.md` explicita quando usar, limites, fluxo e saída. `sddstart` prepara o projeto; `sddfriction` procura padrões nas tarefas arquivadas. O agente deve verificar se houve atrito antes de cada commit que preparar e ao concluir a tarefa. A seção **Atritos no processo de implementação** já está no modelo de `CURRENT_TASK.md`, mas só recebe itens quando houver fatos observados, com impacto e evidência.
+
+A adaptação é conservadora: um atrito isolado não vira automaticamente regra ou skill. O humano decide a mudança após avaliar recorrência, risco e custo de manutenção.
+
 ## A decisão central
 
 O curso se aproxima de **spec as source of truth**: a especificação orienta e deve permanecer coerente com a implementação. O SDD Fast adota **spec anchored development**:
@@ -177,6 +185,9 @@ Se essas respostas não forem claras, o método não cresce.
 - [Tech Leads Club — TLC Spec Lean](https://github.com/tech-leads-club/agent-skills/blob/main/packages/skills-catalog/skills/(development)/tlc-spec-lean/SKILL.md)
 - [Attekita Dev — O Fluxo de Skills que faz a IA Programar Como um Engenheiro de Verdade](https://www.youtube.com/watch?v=SreK3gB6Gso)
 - [Fabio Akita — Hot take: Harness, Loop Engineering, Graph Engineering são Bullshit](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
+- [Fabio Akita — Meu workflow de programação com IA](https://ailair.akitaonrails.com/pt-br/workflow/)
+- [Fabio Akita — Falando um pouco sobre minhas Skills de IA](https://akitaonrails.com/2026/09/17/falando-um-pouco-sobre-minhas-skills-de-ia/)
+- [Fabio Akita — my-skills](https://github.com/akitaonrails/my-skills)
 
 ## Conclusão
 
