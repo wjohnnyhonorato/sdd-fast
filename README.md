@@ -120,6 +120,33 @@ O agente informa de forma curta o que alterou, quais validações executou, seus
 
 Uma prática recorrente pode virar uma skill quando demonstrar valor. Revisão por outro agente é opcional em mudanças maiores ou de maior risco.
 
+## Kaizen: aprender com as tasks
+
+O SDD-Fast começa com uma especificação curta; problemas de execução podem se repetir mesmo quando a entrega passa na validação. O Kaizen usa atritos observados para melhorar as próximas tasks, sem acrescentar regras por precaução. **O humano conduz o Kaizen:** escolhe quando revisar, avalia as recomendações da `sddfriction` e decide o que mudar. O agente registra fatos e, quando solicitado, analisa padrões.
+
+```mermaid
+flowchart TD
+    A["1. Verificar atrito"] --> B{"2. Houve atrito?"}
+    B -- "Sim" --> C["3. Registrar evidência"]
+    B -- "Não" --> D["4. Validar e arquivar"]
+    C --> D
+    D --> E{"5. Humano quer revisar?"}
+    E -- "Não" --> H["8. Observar próximas tasks"]
+    E -- "Sim" --> F["6. Rodar sddfriction"]
+    F --> G["7. Humano decide"]
+    G --> H
+    H --> A
+```
+
+1. **Verificar atrito:** obrigatório antes de commits preparados pelo agente e ao concluir a task.
+2. **Houve atrito?** Se não houve fato observável, deixe a seção sem itens.
+3. **Registrar evidência:** anote fato, impacto e evidência em `CURRENT_TASK.md`.
+4. **Validar e arquivar:** após aprovação humana, arquive a task com os atritos registrados.
+5. **Humano quer revisar?** Você escolhe quando fazer a retrospectiva; não é exigida a cada task.
+6. **Rodar `sddfriction`:** a skill analisa tasks arquivadas e propõe a menor melhoria útil, ou nenhuma.
+7. **Humano decide:** aceite, ajuste ou descarte a proposta antes de mudar o método.
+8. **Observar próximas tasks:** confira se o atrito reaparece.
+
 ## Por que este formato
 
 O [RATIONALE.md](RATIONALE.md) registra as escolhas do método e sua relação com o SDD do curso da DeepLearning.AI. Ele serve à revisão do método; o agente não precisa lê-lo a cada tarefa.
