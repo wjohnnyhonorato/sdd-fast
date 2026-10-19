@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/sdd-fast-rover.png" alt="SDD-fast — mascote inspirado no Perseverance, com uma estrela como norte e foco no próximo passo." width="560">
+</p>
+
 # SDD Fast para Data Science e Agentes
 
 Método enxuto para desenvolver com coding agents com velocidade, controle humano e evidências. Foi pensado para projetos de software, Data Science, Machine Learning, inferência causal e agentes de IA.
