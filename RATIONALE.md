@@ -23,7 +23,7 @@ O SDD Fast procura preservar o valor do SDD sem transformar documentação em um
 
 O curso demonstra que um agente trabalha melhor quando recebe contexto que não consegue inferir apenas do código: objetivo, restrições, escolhas relevantes e critérios de sucesso. Também separa planejamento, implementação e validação, mantendo o humano responsável pela aceitação.
 
-O SDD Fast preserva essa base, mas reduz a quantidade e a longevidade dos documentos.
+O repositório de materiais do curso mostra os artefatos e o fluxo usados como base da comparação abaixo. O SDD Fast preserva a intenção e a validação, mas reduz a quantidade e a longevidade dos documentos.
 
 ### Matt Pocock: práticas pequenas e combináveis
 
@@ -38,6 +38,10 @@ As ideias mais importantes incorporadas ao SDD Fast são:
 - transformar uma prática em skill somente quando ela for recorrente.
 
 O SDD Fast não exige instalar um conjunto de skills. Skills são extensões opcionais do método, não pré-requisitos.
+
+### TLC Spec Lean: compromissos verificáveis
+
+O TLC Spec Lean trata cada verificação como uma afirmação observável com resultado concreto e prova. Testes derivam do comportamento esperado; uma verificação não é enfraquecida para fazer o código passar. O SDD Fast incorpora esses três cuidados em `CURRENT_TASK.md` e na validação, sem exigir o plano, os artefatos e o verificador independente previstos naquela skill.
 
 ### Attekita Dev: um fluxo profissional visível
 
@@ -57,6 +61,14 @@ O SDD Fast aceita o núcleo dessa crítica:
 - agentes adicionais, grafos e skills não são requisitos do desenvolvimento cotidiano;
 - uma nova etapa só é aceita se reduzir um problema observável.
 
+### Skills e kaizen: aprender com o trabalho realizado
+
+No workflow do Akita, skills guardam procedimentos recorrentes; `AGENTS.md` guarda instruções do projeto. Após cada rodada, ele examina erros e demoras e registra a correção no menor lugar útil: teste, instrução, skill ou ferramenta.
+
+No SDD Fast, `SKILL.template.md` explicita quando usar, limites, fluxo e saída. `sddstart` prepara o projeto; `sddfriction` procura padrões nas tarefas arquivadas. O agente deve verificar se houve atrito antes de cada commit que preparar e ao concluir a tarefa. A seção **Atritos no processo de implementação** já está no modelo de `CURRENT_TASK.md`, mas só recebe itens quando houver fatos observados, com impacto e evidência.
+
+A adaptação é conservadora: um atrito isolado não vira automaticamente regra ou skill. O humano decide a mudança após avaliar recorrência, risco e custo de manutenção.
+
 ## A decisão central
 
 O curso se aproxima de **spec as source of truth**: a especificação orienta e deve permanecer coerente com a implementação. O SDD Fast adota **spec anchored development**:
@@ -65,7 +77,7 @@ O curso se aproxima de **spec as source of truth**: a especificação orienta e 
 |---|---|
 | `AGENTS.md` | Contrato permanente e pequeno do projeto |
 | `CURRENT_TASK.md` | Âncora temporária da intenção, dos limites e da validação |
-| `FUTURE_TASKS.md` | Memória humana de possibilidades, sem representar escopo aprovado |
+| `FUTURE_TASKS.md` | Memória consultada em cada tarefa para dependências e próximas escolhas, sem representar escopo aprovado |
 | Código | Comportamento executável atual |
 | Testes, métricas e evals | Evidência do comportamento e da qualidade |
 | `tasks/` | Histórico da intenção no momento da entrega, sem obrigação de sincronização futura |
@@ -114,7 +126,7 @@ Legenda:
 | Sincronizar specs e código | Redefinida | Apenas a tarefa ativa precisa refletir o trabalho atual | Arquivos arquivados são registro histórico, não documentação operacional |
 | Versionar specs e código juntos | Mantida | Todos os artefatos úteis permanecem no Git | Permite revisar a intenção junto do diff que a implementou |
 | Fazer commits pequenos | Mantida como prática | Commits acompanham mudanças coerentes e revisáveis | Melhora revisão e recuperação, sem exigir um commit por item burocrático |
-| Preservar contexto entre sessões | Redefinida | Cada tarefa começa preferencialmente em uma nova sessão, que reconstrói o contexto a partir do contrato, da tarefa, do checkpoint e do projeto | Evita carregar conversas antigas sem perder o contexto técnico persistido |
+| Preservar contexto entre sessões | Redefinida | Cada tarefa começa preferencialmente em uma nova sessão, que reconstrói o contexto a partir do contrato, da tarefa, dos lembretes futuros, do checkpoint e do projeto | Evita carregar conversas antigas sem perder o contexto técnico persistido |
 | Usar checkpoint para continuidade | Simplificada | Estado atual, próximo passo e bloqueio | Não deve virar diário de comandos ou duplicação do Git |
 | Manter o humano como arquiteto e responsável final | Mantida | Humano aprova escopo e resultado | O agente amplia execução, mas não assume responsabilidade técnica ou de negócio |
 | Autorizar comandos e ações do agente com cuidado | Mantida | Regras de segurança ficam no harness e no contrato do projeto | Autonomia deve respeitar risco, credenciais e reversibilidade |
@@ -170,8 +182,12 @@ Se essas respostas não forem claras, o método não cresce.
 - [DeepLearning.AI — Spec-Driven Development with Coding Agents](https://www.deeplearning.ai/courses/spec-driven-development-with-coding-agents/)
 - [Repositório de materiais do curso](https://github.com/https-deeplearning-ai/sc-spec-driven-development-files)
 - [Matt Pocock — Skills for Real Engineers](https://github.com/mattpocock/skills)
+- [Tech Leads Club — TLC Spec Lean](https://github.com/tech-leads-club/agent-skills/blob/main/packages/skills-catalog/skills/(development)/tlc-spec-lean/SKILL.md)
 - [Attekita Dev — O Fluxo de Skills que faz a IA Programar Como um Engenheiro de Verdade](https://www.youtube.com/watch?v=SreK3gB6Gso)
 - [Fabio Akita — Hot take: Harness, Loop Engineering, Graph Engineering são Bullshit](https://akitaonrails.com/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/)
+- [Fabio Akita — Meu workflow de programação com IA](https://ailair.akitaonrails.com/pt-br/workflow/)
+- [Fabio Akita — Falando um pouco sobre minhas Skills de IA](https://akitaonrails.com/2026/09/17/falando-um-pouco-sobre-minhas-skills-de-ia/)
+- [Fabio Akita — my-skills](https://github.com/akitaonrails/my-skills)
 
 ## Conclusão
 
