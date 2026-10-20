@@ -18,7 +18,11 @@ subtarefas ou testes redundantes, falha no ambiente, diff difícil de revisar,
 checkpoint perdido. Exemplos não são ocorrências.
 Registre apenas atritos reais, em uma linha por ocorrência: fato observado;
 impacto; evidência verificável. 
-Não é obrigatório criar um atrito. Se não identificar um atrito evidente, não crie nada. -->
+Não invente atritos. Antes de cada commit preparado pelo agente e na conclusão,
+registre o resultado da verificação no Estado: nenhum atrito observado ou atritos
+registrados. No segundo caso, liste apenas ocorrências reais. -->
+
+- Estado: ainda não avaliado.
 
 ## Checkpoint
 
