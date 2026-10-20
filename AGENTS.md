@@ -113,8 +113,8 @@
 ## Revisão e conclusão
 
 - Compare o diff com a tarefa e verifique escopo, funcionamento, complexidade desnecessária e suficiência das evidências.
-- Não reproduza o diff nem arquivos completos no chat.
-- Informe de forma curta: alterações, validações, resultados e limitações, listando módulos e funções alterados.
+- Durante toda a tarefa, não apresente diffs, patches nem arquivos completos no chat, salvo se o humano pedir. Use o diff internamente para conferir o escopo.
+- Informe de forma curta: alterações, validações, resultados e limitações, listando módulos e funções alterados e onde inspecioná-los nos arquivos ou no `validate_pipeline`.
 - O humano revisa as alterações detalhadas no editor.
 - Antes de cada commit preparado pelo agente e ao concluir a tarefa, verifique se houve atrito relevante na implementação. Registre em `CURRENT_TASK.md`, na seção **Atritos no processo de implementação**, somente fatos novos com impacto e evidência; se não houver, deixe-a sem itens. Não duplique relatos nem crie commits só para registrar atrito.
 - Se o humano fizer um commit fora da sessão, o agente só pode avaliar atritos conhecidos ao voltar a observar o repositório; não suponha que acompanhou o trabalho em segundo plano.
