@@ -48,6 +48,8 @@ Não implemente antes da minha aprovação.
 
 Se usar Devin CLI, instale a pasta [sddstart](.agents/skills/sddstart/) no projeto ou nas skills pessoais e chame `/sddstart`. A skill prepara os arquivos e a tarefa; ela para antes da implementação.
 
+Para atualizar o método em um projeto existente, use [sddupdate](.agents/skills/sddupdate/). Ela propõe as mudanças nas regras do `AGENTS.md` para aprovação humana, preservando o contrato do projeto, a tarefa atual, os lembretes futuros e as tarefas arquivadas. Atualize as próprias skills manualmente.
+
 Depois de aprovar a tarefa:
 
 ```text

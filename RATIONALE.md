@@ -65,7 +65,7 @@ O SDD Fast aceita o núcleo dessa crítica:
 
 No workflow do Akita, skills guardam procedimentos recorrentes; `AGENTS.md` guarda instruções do projeto. Após cada rodada, ele examina erros e demoras e registra a correção no menor lugar útil: teste, instrução, skill ou ferramenta.
 
-No SDD Fast, `SKILL.template.md` explicita quando usar, limites, fluxo e saída. `sddstart` prepara o projeto; `sddfriction` procura padrões nas tarefas arquivadas. O agente deve verificar se houve atrito antes de cada commit que preparar e ao concluir a tarefa. A seção **Atritos no processo de implementação** já está no modelo de `CURRENT_TASK.md`, mas só recebe itens quando houver fatos observados, com impacto e evidência.
+No SDD Fast, `SKILL.template.md` explicita quando usar, limites, fluxo e saída. `sddstart` prepara o projeto; `sddupdate` atualiza regras do método em projetos existentes após revisão humana, preservando o trabalho produzido; `sddfriction` procura padrões nas tarefas arquivadas. O agente deve verificar se houve atrito antes de cada commit que preparar e ao concluir a tarefa. A seção **Atritos no processo de implementação** já está no modelo de `CURRENT_TASK.md`, mas só recebe itens quando houver fatos observados, com impacto e evidência.
 
 A adaptação é conservadora: um atrito isolado não vira automaticamente regra ou skill. O humano decide a mudança após avaliar recorrência, risco e custo de manutenção.
 
