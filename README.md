@@ -53,7 +53,7 @@ Para atualizar o método em um projeto existente, use [sddupdate](.agents/skills
 Depois de aprovar a tarefa:
 
 ```text
-Execute CURRENT_TASK.md, valide o resultado e revise o diff antes de concluir.
+Execute CURRENT_TASK.md, valide o resultado e confira o diff internamente antes de concluir. Resuma as mudanças e evidências sem exibir diffs no chat; indicarei os arquivos e outputs que desejo inspecionar.
 ```
 
 ## Tamanho e contexto da tarefa
