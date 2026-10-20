@@ -38,7 +38,7 @@ flowchart TD
 
 1. **Identificar projeto e arquivos.** Confirme a raiz, a estrutura, o Git e a presença de AGENTS.md, CURRENT_TASK.md e FUTURE_TASKS.md. Leia AGENTS.md existente antes de editar arquivos. Examine código e validações somente conforme a necessidade.
 2. **Faltam arquivos?** Se faltar algum dos três, vá ao item 3; caso contrário, vá ao item 4.
-3. **Copiar arquivos ausentes.** Use a cópia local indicada pelo humano, outra cópia local reconhecível ou a branch develop de https://github.com/wjohnnyhonorato/sdd-fast. Confirme a origem; sem modelos, informe e pare. Copie só os ausentes. Se copiar AGENTS.md, preencha apenas Contrato do projeto e Comandos com fatos verificados.
+3. **Copiar arquivos ausentes.** Use a cópia local indicada pelo humano, outra cópia local reconhecível ou a branch main de https://github.com/wjohnnyhonorato/sdd-fast. Confirme a origem; sem modelos, informe e pare. Copie só os ausentes. Se copiar AGENTS.md, preencha apenas Contrato do projeto e Comandos com fatos verificados.
 4. **Ler AGENTS, CURRENT e FUTURE.** Leia os três arquivos. FUTURE_TASKS.md informa dependências e opções, sem aprovar escopo.
 5. **CURRENT tem tarefa real?** Ignore os campos de exemplo do modelo. Se houver tarefa real, vá ao item 6; caso contrário, vá ao item 7.
 6. **Preservar tarefa e checkpoint.** Mantenha o escopo e o checkpoint. Informe apenas conflitos ou dependências relevantes de FUTURE_TASKS.md. Vá ao item 11.
