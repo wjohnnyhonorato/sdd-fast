@@ -32,7 +32,7 @@ O agente lê `AGENTS.md`, `CURRENT_TASK.md` e `FUTURE_TASKS.md` no início de ca
 
 ## Como começar
 
-1. Copie [AGENTS.md](AGENTS.md), [CURRENT_TASK.md](CURRENT_TASK.md) e [FUTURE_TASKS.md](FUTURE_TASKS.md) para a raiz do projeto.
+1. Copie [AGENTS.md](AGENTS.md), [CURRENT_TASK.md](CURRENT_TASK.md) e [FUTURE_TASKS.md](FUTURE_TASKS.md) para a raiz do projeto, e [scripts/sdd_check_task.py](scripts/sdd_check_task.py) para `scripts/`.
 2. Preencha no `AGENTS.md` o objetivo, as restrições, a arquitetura e os comandos reais do projeto.
 3. Defina em `CURRENT_TASK.md` um comportamento principal, o que está fora do escopo e como um humano verificará o resultado.
 
@@ -48,7 +48,7 @@ Não implemente antes da minha aprovação.
 
 Se usar Devin CLI, instale a pasta [sddstart](.agents/skills/sddstart/) no projeto ou nas skills pessoais e chame `/sddstart`. A skill prepara os arquivos e a tarefa; ela para antes da implementação.
 
-Para atualizar o método em um projeto existente, use [sddupdate](.agents/skills/sddupdate/). Ela propõe as mudanças nas regras do `AGENTS.md` para aprovação humana, preservando o contrato do projeto, a tarefa atual, os lembretes futuros e as tarefas arquivadas. Atualize as próprias skills manualmente.
+Para atualizar o método em um projeto existente, use [sddupdate](.agents/skills/sddupdate/). Ela propõe as mudanças no `AGENTS.md` e na estrutura de `CURRENT_TASK.md`, preservando o conteúdo da tarefa; também instala a checagem se estiver ausente. Tudo exige aprovação humana. Atualize as próprias skills manualmente.
 
 Depois de aprovar a tarefa:
 
@@ -90,6 +90,8 @@ Os nomes dos módulos são ilustrativos. Use `uv` para ambiente, dependências e
 Após mudar `src/`, reinicie o kernel e execute todas as células antes de considerar os resultados do notebook atuais. A execução completa verifica o fluxo, mas a qualidade de um modelo exige as evidências definidas na tarefa.
 
 ## Validação verificável
+
+A checagem estrutural roda ao abrir (`uv run --no-sync python scripts/sdd_check_task.py open`) e antes de concluir ou arquivar (`uv run --no-sync python scripts/sdd_check_task.py close`). Ela verifica seções e estado dos atritos; não avalia a qualidade da evidência.
 
 Cada item de “Como validar” conecta **afirmação observável, resultado esperado e evidência** que o humano pode inspecionar ou reproduzir:
 
