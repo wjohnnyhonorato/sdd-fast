@@ -144,10 +144,10 @@ flowchart TD
     H --> A
 ```
 
-1. **Verificar atrito:** obrigatório antes de commits preparados pelo agente e ao concluir a task.
-2. **Houve atrito?** Se não houve fato observável, deixe a seção sem itens.
+1. **Verificar atrito:** obrigatório antes de commits preparados pelo agente e ao concluir a task; até essa verificação, o estado é `ainda não avaliado`.
+2. **Houve atrito?** Se não houve fato observável, registre `- Estado: nenhum atrito observado.`. Se houve, registre `- Estado: atritos registrados.` e siga ao passo 3.
 3. **Registrar evidência:** anote fato, impacto e evidência em `CURRENT_TASK.md`.
-4. **Validar e arquivar:** após aprovação humana, arquive a task com os atritos registrados.
+4. **Validar e arquivar:** após aprovação humana, arquive a task somente com a avaliação de atritos registrada; restaure `CURRENT_TASK.md` com o modelo completo.
 5. **Humano quer revisar?** Você escolhe quando fazer a retrospectiva; não é exigida a cada task.
 6. **Rodar `sddfriction`:** a skill analisa tasks arquivadas e propõe a menor melhoria útil, ou nenhuma.
 7. **Humano decide:** aceite, ajuste ou descarte a proposta antes de mudar o método.
