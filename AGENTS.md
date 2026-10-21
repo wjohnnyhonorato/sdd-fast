@@ -72,7 +72,7 @@
 ## Antes de implementar
 
 - Leia `CURRENT_TASK.md` e `FUTURE_TASKS.md` no início de cada tarefa, além do código e das validações relacionadas.
-- Ao abrir qualquer nova tarefa, use a estrutura completa do modelo `CURRENT_TASK.md`, inclusive `## Atritos no processo de implementação` com `- Estado: ainda não avaliado.`. Confira os cabeçalhos antes de implementar.
+- Ao abrir qualquer nova tarefa, use a estrutura completa do modelo `CURRENT_TASK.md`, inclusive `## Atritos no processo de implementação` com `- Estado: ainda não avaliado.`. Antes de implementar, confira uma a uma as seções do modelo e o estado dos atritos; acrescente o que faltar sem apagar conteúdo existente. Se não houver correspondência clara entre seções, informe o conflito ao humano.
 - Localize funções, classes, contratos, módulos e testes relacionados.
 - Se não houver tarefa definida, solicite uma ao humano.
 - Se não compreender o impacto da alteração com segurança, pare e
@@ -118,7 +118,7 @@
 - Informe de forma curta: alterações, validações, resultados e limitações, listando módulos e funções alterados e onde inspecioná-los nos arquivos ou no `validate_pipeline`.
 - O humano revisa as alterações detalhadas no editor.
 - Antes de cada commit preparado pelo agente e ao concluir a tarefa, verifique se houve atrito relevante na implementação e atualize **Atritos no processo de implementação** em `CURRENT_TASK.md`: `- Estado: nenhum atrito observado.` se não houver, ou `- Estado: atritos registrados.` com fatos novos, impacto e evidência. Não duplique relatos nem crie commits só para registrar atrito.
-- Não conclua nem arquive uma tarefa enquanto a seção estiver ausente ou com `- Estado: ainda não avaliado.`. Se não houver registro suficiente para avaliar uma tarefa antiga, informe a lacuna ao humano; não presuma ausência de atritos.
+- Antes de concluir ou arquivar, confira novamente se todas as seções do modelo estão presentes e se o estado dos atritos foi avaliado. Se não houver registro suficiente para avaliar uma tarefa antiga, informe a lacuna ao humano; não presuma ausência de atritos.
 - Se o humano fizer um commit fora da sessão, o agente só pode avaliar atritos conhecidos ao voltar a observar o repositório; não suponha que acompanhou o trabalho em segundo plano.
 - Aguarde aprovação antes de arquivar a tarefa.
 - Após aprovação, mova-a para `tasks/NNN-nome-curto.md` e restaure `CURRENT_TASK.md` com o modelo completo, sem tarefa ativa e com atritos em `- Estado: ainda não avaliado.`.
