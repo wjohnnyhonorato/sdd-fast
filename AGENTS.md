@@ -58,7 +58,8 @@
 - Coloque uma etapa principal por célula. Cada célula deve mostrar uma saída concisa e útil para inspecionar o resultado daquela etapa.
 - Não defina funções no notebook nem copie para ele a lógica de `src/`. Funções auxiliares chamadas dentro dos módulos não precisam
   ser executadas uma segunda vez no notebook.
-- Após mudanças nos módulos, reinicie o kernel e execute todas as células antes de considerar os resultados do notebook válidos. Resultados antigos exibidos no arquivo não são evidência atual.
+- **Durante a implementação:** rode apenas as células necessárias para verificar a mudança. Confirme que elas usam a versão atual dos módulos.
+- **Antes de entregar a tarefa:** reinicie o kernel e execute o notebook inteiro, na ordem. Se falhar, corrija e repita. Só a execução completa e atual serve como evidência para a revisão humana.
 - `uv run python main.py` é a verificação principal da execução completa. O notebook permite inspecionar as etapas. Testes, métricas e diagnósticos adicionais seguem o risco e os critérios da tarefa.
 
 ## Contexto por tarefa
